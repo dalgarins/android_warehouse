@@ -10,14 +10,5 @@
         android:layout_height="wrap_content"
         android:id="@+id/nameItem"
         android:layout_alignParentTop="true"
-        android:textSize="20dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/classItem"
-        android:layout_below="@+id/nameItem"
-        />
-
+        android:textSize="20dp" />
 </RelativeLayout>

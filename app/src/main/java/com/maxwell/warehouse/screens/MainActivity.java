@@ -31,16 +31,7 @@ public class MainActivity extends Activity {
     }
 
     private void initializeData(){
-        HashMap<Class, String> itemHashMapList = new HashMap<>();
-        itemHashMapList.put(MediaPlayerStreaming.class,"Media Player Streaming");
-
-        for (HashMap.Entry<Class, String> entry : itemHashMapList.entrySet()) {
-            Items items = new Items();
-            items.setClassItem(entry.getKey());
-            items.setNameItem(entry.getValue());
-
-            itemsList.add(items);
-        }
+        itemsList.add(new Items(MediaPlayerStreaming.class, "Media Player Streaming"));
 
         RVAdapter adapter = new RVAdapter(itemsList,this);
         rv.setAdapter(adapter);

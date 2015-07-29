@@ -7,6 +7,13 @@ public class Items {
     Class classItem;
     String nameItem;
 
+    public Items(){}
+
+    public Items(Class classItem, String nameItem){
+        this.classItem = classItem;
+        this.nameItem = nameItem;
+    }
+
     public void setClassItem(Class classItem) {
         this.classItem = classItem;
     }

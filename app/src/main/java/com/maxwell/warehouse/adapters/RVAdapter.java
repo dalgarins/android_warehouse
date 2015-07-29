@@ -59,13 +59,11 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ItemViewHolder>{
     }
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
-        TextView classItem;
         TextView nameItem;
         RelativeLayout rlItem;
 
         ItemViewHolder(View itemView) {
             super(itemView);
-            classItem = (TextView)itemView.findViewById(R.id.classItem);
             nameItem = (TextView)itemView.findViewById(R.id.nameItem);
             rlItem = (RelativeLayout)itemView.findViewById(R.id.rlItem);
         }
