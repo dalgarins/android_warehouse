@@ -35,6 +35,7 @@ public class MainActivity extends Activity {
         itemsList.add(new Items(MediaPlayerStreaming.class, "Media Player Streaming"));
         itemsList.add(new Items(TestRetrofit.class, "Testing Retrofit"));
         itemsList.add(new Items(FacebookLogin.class, "Facebook Login"));
+        itemsList.add(new Items(FacebookShare.class, "Facebook Share"));
 
         RVAdapter adapter = new RVAdapter(itemsList,this);
         rv.setAdapter(adapter);

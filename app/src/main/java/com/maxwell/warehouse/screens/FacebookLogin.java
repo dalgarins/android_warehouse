@@ -3,6 +3,7 @@ package com.maxwell.warehouse.screens;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -12,6 +13,7 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.facebook.share.model.ShareLinkContent;
 import com.maxwell.warehouse.R;
 
 /**
