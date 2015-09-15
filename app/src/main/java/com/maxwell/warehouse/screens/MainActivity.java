@@ -37,6 +37,7 @@ public class MainActivity extends Activity {
         itemsList.add(new Items(FacebookLogin.class, "Facebook Login"));
         itemsList.add(new Items(FacebookShare.class, "Facebook Share"));
         itemsList.add(new Items(GlideDemo.class, "Glide Demo"));
+        itemsList.add(new Items(ZoomInZoomOut.class, "Zoom In Zoom Out"));
 
         RVAdapter adapter = new RVAdapter(itemsList,this);
         rv.setAdapter(adapter);
