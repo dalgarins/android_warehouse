@@ -36,6 +36,7 @@ public class MainActivity extends Activity {
         itemsList.add(new Items(TestRetrofit.class, "Testing Retrofit"));
         itemsList.add(new Items(FacebookLogin.class, "Facebook Login"));
         itemsList.add(new Items(FacebookShare.class, "Facebook Share"));
+        itemsList.add(new Items(GlideDemo.class, "Glide Demo"));
 
         RVAdapter adapter = new RVAdapter(itemsList,this);
         rv.setAdapter(adapter);

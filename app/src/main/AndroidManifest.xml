@@ -24,6 +24,7 @@
         <activity android:name=".screens.TestRetrofit"></activity>
         <activity android:name=".screens.FacebookLogin"></activity>
         <activity android:name=".screens.FacebookShare"></activity>
+        <activity android:name=".screens.GlideDemo"></activity>
 
         <activity android:name="com.facebook.FacebookActivity"
             android:configChanges=
