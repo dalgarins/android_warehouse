@@ -28,8 +28,10 @@ public class MediaPlayerStreaming extends Activity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if(mediaPlayer != null)
+        if(mediaPlayer != null){
+            mediaPlayer.stop();
             mediaPlayer.release();
+        }
     }
 
     public void play(View view) {
