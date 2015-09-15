@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.facebook.appevents.AppEventsLogger;
 import com.maxwell.warehouse.R;
 import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
@@ -33,9 +34,26 @@ public class MainActivity extends Activity {
     private void initializeData(){
         itemsList.add(new Items(MediaPlayerStreaming.class, "Media Player Streaming"));
         itemsList.add(new Items(TestRetrofit.class, "Testing Retrofit"));
+        itemsList.add(new Items(FacebookLogin.class, "Facebook Login"));
 
         RVAdapter adapter = new RVAdapter(itemsList,this);
         rv.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Logs 'install' and 'app activate' App Events. (facebook)
+        AppEventsLogger.activateApp(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        // Logs 'app deactivate' App Event. (facebook)
+        AppEventsLogger.deactivateApp(this);
     }
 
 }
