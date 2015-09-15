@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import com.maxwell.warehouse.R;
 import com.maxwell.warehouse.interfaces.LevaduraPodService;
 import com.maxwell.warehouse.models.Podcast;
+import com.maxwell.warehouse.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,6 @@ import retrofit.Retrofit;
  * Created by Maximiliano on 15/09/15.
  */
 public class TestRetrofit extends ListActivity {
-    String API = "http://api.levadura.argentinageek.net";
     private List<String> list;
 
     @Override
@@ -34,7 +34,7 @@ public class TestRetrofit extends ListActivity {
         list = new ArrayList<>();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(API)
+                .baseUrl(Constants.API_LEVADURA_PODCAST)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
