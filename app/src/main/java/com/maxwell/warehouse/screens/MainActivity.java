@@ -32,6 +32,7 @@ public class MainActivity extends Activity {
 
     private void initializeData(){
         itemsList.add(new Items(MediaPlayerStreaming.class, "Media Player Streaming"));
+        itemsList.add(new Items(TestRetrofit.class, "Testing Retrofit"));
 
         RVAdapter adapter = new RVAdapter(itemsList,this);
         rv.setAdapter(adapter);

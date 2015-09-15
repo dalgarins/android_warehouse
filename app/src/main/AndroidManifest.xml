@@ -21,6 +21,7 @@
         </activity>
 
         <activity android:name=".screens.MediaPlayerStreaming"></activity>
+        <activity android:name=".screens.TestRetrofit"></activity>
     </application>
 
 </manifest>
