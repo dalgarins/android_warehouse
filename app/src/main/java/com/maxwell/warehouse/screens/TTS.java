@@ -13,6 +13,7 @@ import android.widget.SeekBar;
 
 import com.maxwell.warehouse.R;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -103,26 +104,26 @@ public class TTS extends Activity implements TextToSpeech.OnInitListener {
     private void speech() {
         engine.setPitch((float) pitch);
         engine.setSpeechRate((float) speed);
-        String speech="";
+        String speech=editText.getText().toString();
 //        engine.synthesizeToFile(editText.getText().toString(),null,file,null);
         engine.speak(editText.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
-        /* esto de aca no anda, guarda el archivo pero debe estar corrupto porque no se puede reproducir
+        /* esto de aca no anda, guarda el archivo pero debe estar corrupto porque no se puede reproducir */
         try {
             HashMap<String, String> myHashRender = new HashMap();
             PackageManager m = getPackageManager();
             String s = getPackageName();
             PackageInfo p = m.getPackageInfo(s, 0);
             s = p.applicationInfo.dataDir;
-            String destFileName = s+ "/file.wav";
+            String destFileName = s+ "/file.mp3";
             myHashRender.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, editText.getText().toString());
-            engine.synthesizeToFile(editText.getText().toString(), myHashRender, destFileName);
 
-
+            engine.synthesizeToFile(editText.getText().toString(), null, destFileName);
+            
             engine.addSpeech(speech, destFileName);
             engine.speak(speech, TextToSpeech.QUEUE_ADD, null);
         } catch (Exception e) {
         }
-        */
+
     }
 
     @Override
