@@ -2,11 +2,8 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-<<<<<<< HEAD
+
     buildToolsVersion "23 rc3"
-=======
-    buildToolsVersion "23"
->>>>>>> 173bf607f72bfe3b4137ddb639f6d22f12b86765
 
     defaultConfig {
         applicationId "com.maxwell.warehouse"
