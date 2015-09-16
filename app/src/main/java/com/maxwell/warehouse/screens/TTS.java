@@ -1,10 +1,14 @@
 package com.maxwell.warehouse.screens;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.UtteranceProgressListener;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -101,12 +105,29 @@ public class TTS extends Activity implements TextToSpeech.OnInitListener {
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
     private void speech() {
         engine.setPitch((float) pitch);
         engine.setSpeechRate((float) speed);
-        String speech=editText.getText().toString();
+        String speech = editText.getText().toString();
 //        engine.synthesizeToFile(editText.getText().toString(),null,file,null);
-        engine.speak(editText.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
+//        engine.speak(editText.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
+        engine.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+            @Override
+            public void onStart(String utteranceId) {
+                Log.d(utteranceId, "start");
+            }
+
+            @Override
+            public void onDone(String utteranceId) {
+                Log.d(utteranceId, "done");
+            }
+
+            @Override
+            public void onError(String utteranceId) {
+                Log.d(utteranceId, "error");
+            }
+        });
         /* esto de aca no anda, guarda el archivo pero debe estar corrupto porque no se puede reproducir */
         try {
             HashMap<String, String> myHashRender = new HashMap();
@@ -114,14 +135,20 @@ public class TTS extends Activity implements TextToSpeech.OnInitListener {
             String s = getPackageName();
             PackageInfo p = m.getPackageInfo(s, 0);
             s = p.applicationInfo.dataDir;
-            String destFileName = s+ "/file.mp3";
+            String destFileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/file.mp3";
+
             myHashRender.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, editText.getText().toString());
 
-            engine.synthesizeToFile(editText.getText().toString(), null, destFileName);
-            
-            engine.addSpeech(speech, destFileName);
-            engine.speak(speech, TextToSpeech.QUEUE_ADD, null);
+            File f = new File(destFileName);
+            f.createNewFile();
+            if (f.exists()) {
+                engine.synthesizeToFile(editText.getText().toString(), null, destFileName);
+
+                engine.addSpeech(speech, destFileName);
+                engine.speak(speech, TextToSpeech.QUEUE_ADD, null);
+            }
         } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }
