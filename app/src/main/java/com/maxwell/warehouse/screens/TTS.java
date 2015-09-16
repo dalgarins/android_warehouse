@@ -1,6 +1,8 @@
 package com.maxwell.warehouse.screens;
 
 import android.app.Activity;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -11,6 +13,7 @@ import android.widget.SeekBar;
 
 import com.maxwell.warehouse.R;
 
+import java.util.HashMap;
 import java.util.Locale;
 
 /**
@@ -23,8 +26,8 @@ public class TTS extends Activity implements TextToSpeech.OnInitListener {
     private EditText editText;
     private SeekBar seekPitch;
     private SeekBar seekSpeed;
-    private double pitch=1.0;
-    private double speed=1.0;
+    private double pitch = 1.0;
+    private double speed = 1.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,8 +103,26 @@ public class TTS extends Activity implements TextToSpeech.OnInitListener {
     private void speech() {
         engine.setPitch((float) pitch);
         engine.setSpeechRate((float) speed);
+        String speech="";
 //        engine.synthesizeToFile(editText.getText().toString(),null,file,null);
         engine.speak(editText.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
+        /* esto de aca no anda, guarda el archivo pero debe estar corrupto porque no se puede reproducir
+        try {
+            HashMap<String, String> myHashRender = new HashMap();
+            PackageManager m = getPackageManager();
+            String s = getPackageName();
+            PackageInfo p = m.getPackageInfo(s, 0);
+            s = p.applicationInfo.dataDir;
+            String destFileName = s+ "/file.wav";
+            myHashRender.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, editText.getText().toString());
+            engine.synthesizeToFile(editText.getText().toString(), myHashRender, destFileName);
+
+
+            engine.addSpeech(speech, destFileName);
+            engine.speak(speech, TextToSpeech.QUEUE_ADD, null);
+        } catch (Exception e) {
+        }
+        */
     }
 
     @Override
