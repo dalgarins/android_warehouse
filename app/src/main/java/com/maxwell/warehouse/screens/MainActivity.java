@@ -41,6 +41,7 @@ public class MainActivity extends Activity {
         itemsList.add(new Items(GitHubApiDemo.class, "GitHub Api"));
         itemsList.add(new Items(TTS.class, "TTS Example"));
         itemsList.add(new Items(ButterKnifeDemo.class, "ButterKnife Demo"));
+        itemsList.add(new Items(ParallaxDemo.class, "Parallax Demo"));
 
         RVAdapter adapter = new RVAdapter(itemsList,this);
         rv.setAdapter(adapter);
