@@ -40,6 +40,7 @@ public class MainActivity extends Activity {
         itemsList.add(new Items(ZoomInZoomOut.class, "Zoom In Zoom Out"));
         itemsList.add(new Items(GitHubApiDemo.class, "GitHub Api"));
         itemsList.add(new Items(TTS.class, "TTS Example"));
+        itemsList.add(new Items(ButterKnifeDemo.class, "ButterKnife Demo"));
 
         RVAdapter adapter = new RVAdapter(itemsList,this);
         rv.setAdapter(adapter);
