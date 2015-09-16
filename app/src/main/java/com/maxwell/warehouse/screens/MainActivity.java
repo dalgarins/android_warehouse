@@ -39,6 +39,7 @@ public class MainActivity extends Activity {
         itemsList.add(new Items(GlideDemo.class, "Glide Demo"));
         itemsList.add(new Items(ZoomInZoomOut.class, "Zoom In Zoom Out"));
         itemsList.add(new Items(GitHubApiDemo.class, "GitHub Api"));
+        itemsList.add(new Items(TTS.class, "TTS Example"));
 
         RVAdapter adapter = new RVAdapter(itemsList,this);
         rv.setAdapter(adapter);
@@ -59,5 +60,7 @@ public class MainActivity extends Activity {
         // Logs 'app deactivate' App Event. (facebook)
         AppEventsLogger.deactivateApp(this);
     }
+
+
 
 }

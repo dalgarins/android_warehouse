@@ -27,6 +27,7 @@
         <activity android:name=".screens.GlideDemo"></activity>
         <activity android:name=".screens.ZoomInZoomOut"></activity>
         <activity android:name=".screens.GitHubApiDemo"></activity>
+        <activity android:name=".screens.TTS"></activity>
 
         <activity android:name="com.facebook.FacebookActivity"
             android:configChanges=
