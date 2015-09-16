@@ -20,6 +20,7 @@
         android:id="@+id/sentence"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:text="La puta madre, esto no esta funcionando. Me parece que vamos a tener problemas. El limite de caracteres es 4000."
         android:layout_below="@id/txt" />
 
 
