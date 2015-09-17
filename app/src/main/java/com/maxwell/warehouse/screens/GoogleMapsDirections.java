@@ -1,21 +1,17 @@
 package com.maxwell.warehouse.screens;
 
-import android.graphics.drawable.Drawable;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
-import com.google.android.gms.maps.model.BitmapDescriptor;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.maxwell.warehouse.R;
 import com.maxwell.warehouse.utils.GoogleMapsUtils;
 
-public class GoogleMapsDemo extends FragmentActivity {
+public class GoogleMapsDirections extends FragmentActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
@@ -51,7 +47,7 @@ public class GoogleMapsDemo extends FragmentActivity {
         GoogleMapsUtils.addMarkerToMap(mMap, -34.5500524, -58.7120583, "No pases los dias que alguien se reciba...", R.drawable.eggs);
         GoogleMapsUtils.addMarkerToMap(mMap, -34.543131, -58.711875, "Le aseguro que aqui no se droga nadie!", R.drawable.drinkingwater);
         GoogleMapsUtils.addMarkerToMap(mMap, -34.5444444, -58.7127175, "Y creias que en provincia no habian taxis?", R.drawable.car);
-        GoogleMapsUtils.addMarkerToMap(mMap, -34.5339038,-58.7014631, "Aqui Frecuentan chicas disfrazadas de Pikachu",R.drawable.beach);
+        GoogleMapsUtils.addMarkerToMap(mMap, -34.5339038, -58.7014631, "Aqui Frecuentan chicas disfrazadas de Pikachu", R.drawable.beach);
 
         mMap.setMyLocationEnabled(true);
 
