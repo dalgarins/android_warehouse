@@ -1,11 +1,15 @@
 package com.maxwell.warehouse.screens;
 
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.maxwell.warehouse.R;
@@ -41,14 +45,30 @@ public class GoogleMapsDemo extends FragmentActivity {
     }
 
     private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+        addMarkerToMap(mMap, -34.548373, -58.718667, "Calle para correr!",R.drawable.abduction);
+        addMarkerToMap(mMap, -34.5453511,-58.7106421, "Por aca suelen ir al baño...",R.drawable.aboriginal);
+        addMarkerToMap(mMap, -34.5500524,-58.7120583, "No pases los dias que alguien se reciba...",R.drawable.eggs);
+        addMarkerToMap(mMap, -34.543131, -58.711875, "Le aseguro que aqui no se droga nadie!",R.drawable.drinkingwater);
+        addMarkerToMap(mMap, -34.5444444,-58.7127175, "Y creias que en provincia no habian taxis?",R.drawable.car);
+        addMarkerToMap(mMap, -34.5339038,-58.7014631, "Aqui Frecuentan chicas disfrazadas de Pikachu",R.drawable.beach);
 
         mMap.setMyLocationEnabled(true);
+
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(-34.548373, -58.718667),12f));
 
         UiSettings uiSettings = mMap.getUiSettings();
 
         uiSettings.setZoomControlsEnabled(true);
         uiSettings.setCompassEnabled(true);
         uiSettings.setMapToolbarEnabled(true);
+    }
+
+    private void addMarkerToMap(GoogleMap map,double lat,double lng,String title, int icon){
+        BitmapDescriptor markerIcon = BitmapDescriptorFactory.fromResource(icon);
+
+        map.addMarker(new MarkerOptions()
+                .position(new LatLng(lat, lng))
+                .title(title)
+                .icon(markerIcon));
     }
 }
