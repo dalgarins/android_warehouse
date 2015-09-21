@@ -6,4 +6,5 @@ package com.maxwell.warehouse.utils;
 public class Constants {
     public static final String API_LEVADURA_PODCAST = "http://api.levadura.argentinageek.net";
     public static final String API_GITHUB = "https://api.github.com";
+    public static final String API_GOOGLE_MAPS = "https://maps.googleapis.com";
 }

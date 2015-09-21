@@ -69,6 +69,12 @@
             android:label="@string/title_activity_google_maps_demo" >
         </activity>
 
+        <activity
+            android:name=".screens.GoogleMapsDirections"
+            android:label="@string/title_activity_google_maps_demo" >
+        </activity>
+
+
         <!-- GOOGLE MAPS END -->
     </application>
 
