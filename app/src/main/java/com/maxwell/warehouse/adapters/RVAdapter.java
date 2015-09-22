@@ -2,6 +2,7 @@ package com.maxwell.warehouse.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,11 +62,13 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ItemViewHolder>{
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
         TextView nameItem;
         RelativeLayout rlItem;
+        CardView cardView;
 
         ItemViewHolder(View itemView) {
             super(itemView);
             nameItem = (TextView)itemView.findViewById(R.id.nameItem);
             rlItem = (RelativeLayout)itemView.findViewById(R.id.rlItem);
+            cardView = (CardView)itemView.findViewById(R.id.cardView);
         }
     }
 }
