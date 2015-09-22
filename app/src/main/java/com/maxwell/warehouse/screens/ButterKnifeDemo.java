@@ -2,6 +2,7 @@ package com.maxwell.warehouse.screens;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,7 +14,7 @@ import butterknife.ButterKnife;
 /**
  * Created by Maxwell on 16/09/2015.
  */
-public class ButterKnifeDemo extends Activity {
+public class ButterKnifeDemo extends AppCompatActivity {
     @Bind(R.id.username) TextView username;
     @Bind(R.id.name) TextView name;
     @Bind(R.id.location) TextView location;

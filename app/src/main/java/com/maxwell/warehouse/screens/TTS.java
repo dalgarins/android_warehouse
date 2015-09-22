@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -24,7 +25,7 @@ import java.util.Locale;
 /**
  * Created by MauroLombardi on 9/16/15.
  */
-public class TTS extends Activity implements TextToSpeech.OnInitListener {
+public class TTS extends AppCompatActivity implements TextToSpeech.OnInitListener {
 
     private ImageView speechButton;
     private TextToSpeech engine;

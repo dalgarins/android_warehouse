@@ -2,6 +2,7 @@ package com.maxwell.warehouse.screens;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -22,7 +23,7 @@ import retrofit.Retrofit;
 /**
  * Created by Maximiliano on 15/09/15.
  */
-public class GitHubApiDemo extends Activity {
+public class GitHubApiDemo extends AppCompatActivity {
     ImageView avatar;
     TextView username, name, location, blog, email, repos, gists, followers, following;
 

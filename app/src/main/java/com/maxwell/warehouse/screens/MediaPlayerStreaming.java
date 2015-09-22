@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by Maximiliano on 29/07/15.
  */
-public class MediaPlayerStreaming extends Activity {
+public class MediaPlayerStreaming extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     TextView buffer;
 

@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.facebook.CallbackManager;
@@ -19,7 +20,7 @@ import com.maxwell.warehouse.R;
 /**
  * Created by Maximiliano on 15/09/15.
  */
-public class FacebookLogin extends Activity {
+public class FacebookLogin extends AppCompatActivity {
     private TextView info;
     private LoginButton loginButton;
     private CallbackManager callbackManager;

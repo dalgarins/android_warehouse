@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.FloatMath;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -14,7 +15,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.maxwell.warehouse.R;
 
-public class ZoomInZoomOut extends Activity implements OnTouchListener
+public class ZoomInZoomOut extends AppCompatActivity implements OnTouchListener
 {
     private static final String TAG = "Touch";
     @SuppressWarnings("unused")

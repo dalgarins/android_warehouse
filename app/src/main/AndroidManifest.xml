@@ -28,19 +28,77 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".screens.MediaPlayerStreaming" />
-        <activity android:name=".screens.TestRetrofit" />
-        <activity android:name=".screens.FacebookLogin" />
-        <activity android:name=".screens.FacebookShare" />
-        <activity android:name=".screens.GlideDemo" />
-        <activity android:name=".screens.ZoomInZoomOut" />
-        <activity android:name=".screens.GitHubApiDemo" />
-        <activity android:name=".screens.TTS" />
-        <activity android:name=".screens.ButterKnifeDemo" />
-        <activity android:name=".screens.ParallaxDemo" />
+
+        <activity android:name=".screens.MediaPlayerStreaming" android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
+
+        <activity android:name=".screens.TestRetrofit"/>
+
+        <activity android:name=".screens.FacebookLogin" android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
+
+        <activity android:name=".screens.FacebookShare" android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
+
+        <activity android:name=".screens.GlideDemo" android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
+
+        <activity android:name=".screens.ZoomInZoomOut" android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
+
+        <activity android:name=".screens.GitHubApiDemo" android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
+
+        <activity android:name=".screens.TTS" android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
+
+        <activity android:name=".screens.ButterKnifeDemo" android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
+
+        <activity android:name=".screens.ParallaxDemo" android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
+
         <activity android:name=".screens.DrawerLayoutDemo" />
-        <activity android:name=".screens.ParallaxWithCardView" />
-        <activity android:name=".screens.SnackbarDemo" />
+
+        <activity android:name=".screens.ParallaxWithCardView" android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
+
+        <activity android:name=".screens.SnackbarDemo" android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
+
         <activity android:name=".screens.ActionBarDemo" android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -73,15 +131,11 @@
 
         <activity
             android:name=".screens.GoogleMapsDemo"
-            android:label="@string/title_activity_google_maps_demo" >
-        </activity>
+            android:label="@string/title_activity_google_maps_demo" />
 
         <activity
             android:name=".screens.GoogleMapsDirections"
-            android:label="@string/title_activity_google_maps_demo" >
-        </activity>
-
-
+            android:label="@string/title_activity_google_maps_demo"/>
         <!-- GOOGLE MAPS END -->
     </application>
 

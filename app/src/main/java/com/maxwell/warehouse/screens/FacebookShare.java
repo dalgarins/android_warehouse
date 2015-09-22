@@ -3,6 +3,7 @@ package com.maxwell.warehouse.screens;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.facebook.CallbackManager;
@@ -16,7 +17,7 @@ import com.facebook.share.widget.ShareDialog;
 /**
  * Created by Maximiliano on 15/09/15.
  */
-public class FacebookShare extends Activity {
+public class FacebookShare extends AppCompatActivity {
     final ShareDialog shareDialog = new ShareDialog(this);
 
     @Override
