@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         itemsList.add(new Items(GoogleMapsDemo.class, "GoogleMaps Demo"));
         itemsList.add(new Items(GoogleMapsDirections.class, "GoogleMaps Trace Route"));
         itemsList.add(new Items(ParallaxWithCardView.class, "Parallax with CardView"));
+        itemsList.add(new Items(SnackbarDemo.class, "Snackbar Demo"));
 
         RVAdapter adapter = new RVAdapter(itemsList,this);
         rv.setAdapter(adapter);

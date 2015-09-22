@@ -40,6 +40,7 @@
         <activity android:name=".screens.ParallaxDemo" />
         <activity android:name=".screens.DrawerLayoutDemo" />
         <activity android:name=".screens.ParallaxWithCardView" />
+        <activity android:name=".screens.SnackbarDemo" />
 
         <!-- FACEBOOK BEGIN -->
         <activity
