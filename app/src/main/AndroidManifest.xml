@@ -39,6 +39,7 @@
         <activity android:name=".screens.ButterKnifeDemo" />
         <activity android:name=".screens.ParallaxDemo" />
         <activity android:name=".screens.DrawerLayoutDemo" />
+        <activity android:name=".screens.ParallaxWithCardView" />
 
         <!-- FACEBOOK BEGIN -->
         <activity
