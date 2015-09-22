@@ -41,6 +41,11 @@
         <activity android:name=".screens.DrawerLayoutDemo" />
         <activity android:name=".screens.ParallaxWithCardView" />
         <activity android:name=".screens.SnackbarDemo" />
+        <activity android:name=".screens.ActionBarDemo" android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
 
         <!-- FACEBOOK BEGIN -->
         <activity
