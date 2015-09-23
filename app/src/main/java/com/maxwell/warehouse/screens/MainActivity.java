@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         itemsList.add(new Items(SnackbarDemo.class, "Snackbar Demo"));
         itemsList.add(new Items(ActionBarDemo.class, "ActionBar Demo"));
         itemsList.add(new Items(NewsFragment.class, "Fragment Dinamico"));
+        itemsList.add(new Items(PrefsDemo.class, "Preferences Demo"));
 
         RVAdapter adapter = new RVAdapter(itemsList,this);
         rv.setAdapter(adapter);
