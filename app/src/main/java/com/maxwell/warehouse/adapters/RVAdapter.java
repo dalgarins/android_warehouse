@@ -40,6 +40,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ItemViewHolder>{
 
         holder.nameItem.setText(itemsList.get(position).getNameItem());
 
+
+
         holder.rlItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

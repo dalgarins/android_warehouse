@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         itemsList.add(new Items(ParallaxWithCardView.class, "Parallax with CardView"));
         itemsList.add(new Items(SnackbarDemo.class, "Snackbar Demo"));
         itemsList.add(new Items(ActionBarDemo.class, "ActionBar Demo"));
-        itemsList.add(new Items(NewsFragment.class, "Fragment Estatico"));
+        itemsList.add(new Items(NewsFragment.class, "Fragment Dinamico"));
 
         RVAdapter adapter = new RVAdapter(itemsList,this);
         rv.setAdapter(adapter);
