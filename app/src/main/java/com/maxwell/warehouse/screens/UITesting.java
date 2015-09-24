@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import com.maxwell.warehouse.R;
 import com.maxwell.warehouse.adapters.CardViewAdapter;
 import com.maxwell.warehouse.models.CardviewModel;
+import com.maxwell.warehouse.utils.SwipeableRecyclerViewTouchListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,7 @@ public class UITesting extends AppCompatActivity {
     List<CardviewModel> itemsList = new ArrayList<>();
     @Bind(R.id.rv)
     RecyclerView rv;
+    CardViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,40 @@ public class UITesting extends AppCompatActivity {
         rv.setLayoutManager(llm);
 
         initializeData();
+
+        if(adapter != null)
+            activateSwipeToLeft();
+    }
+
+    private void activateSwipeToLeft(){
+        SwipeableRecyclerViewTouchListener swipeTouchListener =
+                new SwipeableRecyclerViewTouchListener(rv,
+                        new SwipeableRecyclerViewTouchListener.SwipeListener() {
+                            @Override
+                            public boolean canSwipe(int position) {
+                                return true;
+                            }
+
+                            @Override
+                            public void onDismissedBySwipeLeft(RecyclerView recyclerView, int[] reverseSortedPositions) {
+                                for (int position : reverseSortedPositions) {
+                                    itemsList.remove(position);
+                                    adapter.notifyItemRemoved(position);
+                                }
+                                adapter.notifyDataSetChanged();
+                            }
+
+                            @Override
+                            public void onDismissedBySwipeRight(RecyclerView recyclerView, int[] reverseSortedPositions) {
+                                for (int position : reverseSortedPositions) {
+                                    itemsList.remove(position);
+                                    adapter.notifyItemRemoved(position);
+                                }
+                                adapter.notifyDataSetChanged();
+                            }
+                        });
+
+        rv.addOnItemTouchListener(swipeTouchListener);
     }
 
     private void initializeData() {
@@ -52,7 +88,7 @@ public class UITesting extends AppCompatActivity {
             itemsList.add(item);
         }
 
-        CardViewAdapter adapter = new CardViewAdapter(itemsList,this);
+        adapter = new CardViewAdapter(itemsList,this);
         rv.setAdapter(adapter);
     }
 }

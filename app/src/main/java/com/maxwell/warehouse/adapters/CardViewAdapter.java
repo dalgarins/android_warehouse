@@ -42,7 +42,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ItemVi
         Glide.with(ctx).load(itemsList.get(position).getImgUrl()).into(holder.imageCardViewUI);
 
         holder.titleCardViewUI.setText(itemsList.get(position).getTitle());
-        holder.descCardViewUI.setText(itemsList.get(position).getDescription());
+        holder.titleCardViewUI.setText(itemsList.get(position).getTitle());
     }
 
     @Override
