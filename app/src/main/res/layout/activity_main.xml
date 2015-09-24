@@ -15,7 +15,6 @@
     <LinearLayout
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="5dp"
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -25,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/bats"
-            android:layout_marginRight="3dp"
+            android:layout_marginRight="2dp"
             app:elevation="4dp" />
 
         <android.support.design.widget.FloatingActionButton
@@ -33,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/beach"
-            android:layout_marginRight="3dp"
+            android:layout_marginRight="2dp"
             app:elevation="4dp" />
 
         <android.support.design.widget.FloatingActionButton
