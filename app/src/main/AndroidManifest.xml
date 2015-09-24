@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.maxwell.warehouse" >
+    package="com.maxwell.warehouse">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-    <!--
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />    <!--
  The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but are recommended.
     -->
@@ -18,10 +18,10 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".screens.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,57 +29,83 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".screens.MediaPlayerStreaming" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.MediaPlayerStreaming"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.TestRetrofit"/>
+        <activity android:name=".screens.TestRetrofit" />
 
-        <activity android:name=".screens.FacebookLogin" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.FacebookLogin"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.FacebookShare" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.FacebookShare"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.GlideDemo" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.GlideDemo"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.ZoomInZoomOut" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.ZoomInZoomOut"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.GitHubApiDemo" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.GitHubApiDemo"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.TTS" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.TTS"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.ButterKnifeDemo" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.STT"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.ParallaxDemo" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.ButterKnifeDemo"
+            android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".screens.ParallaxDemo"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
@@ -87,25 +113,33 @@
 
         <activity android:name=".screens.DrawerLayoutDemo" />
 
-        <activity android:name=".screens.ParallaxWithCardView" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.ParallaxWithCardView"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.SnackbarDemo" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.SnackbarDemo"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.ActionBarDemo" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.ActionBarDemo"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.NewsFragment" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.NewsFragment"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
@@ -141,7 +175,7 @@
 
         <activity
             android:name=".screens.GoogleMapsDirections"
-            android:label="@string/title_activity_google_maps_demo"/>
+            android:label="@string/title_activity_google_maps_demo" />
         <!-- GOOGLE MAPS END -->
     </application>
 

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        rv = (RecyclerView)findViewById(R.id.rv);
+        rv = (RecyclerView) findViewById(R.id.rv);
         rv.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         initializeData();
     }
 
-    private void initializeData(){
+    private void initializeData() {
         itemsList.add(new Items(MediaPlayerStreaming.class, "Media Player Streaming"));
         itemsList.add(new Items(TestRetrofit.class, "Testing Retrofit"));
         itemsList.add(new Items(FacebookLogin.class, "Facebook Login"));
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         itemsList.add(new Items(ZoomInZoomOut.class, "Zoom In Zoom Out"));
         itemsList.add(new Items(GitHubApiDemo.class, "GitHub Api"));
         itemsList.add(new Items(TTS.class, "TTS Example"));
+        itemsList.add(new Items(STT.class, "STT Example"));
         itemsList.add(new Items(ButterKnifeDemo.class, "ButterKnife Demo"));
         itemsList.add(new Items(ParallaxDemo.class, "Parallax Demo"));
         itemsList.add(new Items(DrawerLayoutDemo.class, "DrawerLayout Demo"));
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         itemsList.add(new Items(ActionBarDemo.class, "ActionBar Demo"));
         itemsList.add(new Items(NewsFragment.class, "Fragment Dinamico"));
 
-        RVAdapter adapter = new RVAdapter(itemsList,this);
+        RVAdapter adapter = new RVAdapter(itemsList, this);
         rv.setAdapter(adapter);
     }
 
@@ -70,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
         // Logs 'app deactivate' App Event. (facebook)
         AppEventsLogger.deactivateApp(this);
     }
-
 
 
 }
