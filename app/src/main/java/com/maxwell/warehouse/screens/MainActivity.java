@@ -1,10 +1,11 @@
 package com.maxwell.warehouse.screens;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.facebook.appevents.AppEventsLogger;
 import com.maxwell.warehouse.R;
@@ -12,22 +13,29 @@ import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 
 public class MainActivity extends AppCompatActivity {
     List<Items> itemsList = new ArrayList<>();
     RecyclerView rv;
+    @Bind(R.id.buttonsContainer)
+    LinearLayout buttonsContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         rv = (RecyclerView) findViewById(R.id.rv);
         rv.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
+
+        buttonsContainer.setVisibility(View.GONE);
 
         initializeData();
     }
