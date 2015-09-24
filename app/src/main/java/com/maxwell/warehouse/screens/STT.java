@@ -1,24 +1,16 @@
 package com.maxwell.warehouse.screens;
 
 import android.app.Activity;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.util.Log;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ToggleButton;
-
 import com.maxwell.warehouse.R;
-
 import java.util.ArrayList;
-import java.util.Locale;
 
 /**
  * Created by MauroLombardi on 9/23/15.
@@ -28,6 +20,7 @@ public class STT extends Activity implements RecognitionListener {
     private SpeechRecognizer speech = null;
     private Intent recognizerIntent;
     private String LOG_TAG = "STT";
+    private Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +38,22 @@ public class STT extends Activity implements RecognitionListener {
                 RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
         recognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 3);
 
-        //TODO esperar un tiempo y empezar a escuchar y despues frenar
-//                speech.startListening(recognizerIntent);
-//                speech.stopListening();
+        listen();
 
     }
+
+    private void listen(){
+        speech.startListening(recognizerIntent);
+
+        handler.postDelayed(runnable, 1500);
+    }
+
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            speech.stopListening();
+        }
+    };
 
     @Override
     public void onResume() {
@@ -108,6 +112,7 @@ public class STT extends Activity implements RecognitionListener {
             text += result + "\n";
 
         returnedText.setText(text);
+        listen();
     }
 
     @Override
