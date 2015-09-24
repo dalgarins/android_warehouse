@@ -94,6 +94,14 @@
         </activity>
 
         <activity
+            android:name=".screens.AdvanceTTSAndSTT"
+            android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
+
+        <activity
             android:name=".screens.ButterKnifeDemo"
             android:parentActivityName=".screens.MainActivity">
             <meta-data

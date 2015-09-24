@@ -143,7 +143,7 @@ public class TTS extends AppCompatActivity implements TextToSpeech.OnInitListene
             File f = new File(destFileName);
             f.createNewFile();
             if (f.exists()) {
-                engine.synthesizeToFile(editText.getText().toString(), null, destFileName);
+                engine.synthesizeToFile(editText.getText().toString(),myHashRender, destFileName);
 
                 engine.addSpeech(speech, destFileName);
                 engine.speak(speech, TextToSpeech.QUEUE_ADD, null);

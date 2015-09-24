@@ -8,6 +8,8 @@ import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import com.maxwell.warehouse.R;
 import java.util.ArrayList;
@@ -21,11 +23,19 @@ public class STT extends Activity implements RecognitionListener {
     private Intent recognizerIntent;
     private String LOG_TAG = "STT";
     private Handler handler = new Handler();
+    private ImageButton btnSpeak;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stt_layout);
+        btnSpeak = (ImageButton)findViewById(R.id.btnSpeak);
+        btnSpeak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listen();
+            }
+        });
         returnedText = (TextView) findViewById(R.id.txtSpeechInput);
         speech = SpeechRecognizer.createSpeechRecognizer(this);
         speech.setRecognitionListener(this);
@@ -37,8 +47,6 @@ public class STT extends Activity implements RecognitionListener {
         recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                 RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
         recognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 3);
-
-        listen();
 
     }
 

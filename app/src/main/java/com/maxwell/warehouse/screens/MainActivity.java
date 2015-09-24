@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         itemsList.add(new Items(GitHubApiDemo.class, "GitHub Api"));
         itemsList.add(new Items(TTS.class, "TTS Example"));
         itemsList.add(new Items(STT.class, "STT Example"));
+        itemsList.add(new Items(AdvanceTTSAndSTT.class, "Advance TTS & STT Example"));
         itemsList.add(new Items(ButterKnifeDemo.class, "ButterKnife Demo"));
         itemsList.add(new Items(ParallaxDemo.class, "Parallax Demo"));
         itemsList.add(new Items(DrawerLayoutDemo.class, "DrawerLayout Demo"));
