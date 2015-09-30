@@ -17,17 +17,18 @@ public class Beneficio extends Information implements Parcelable {
     private String benefitPhoto;
     private Long expiration_date = 0L;
 
-    public boolean big = false;
+    public boolean big;
 
     public Beneficio(){
 
         defineViewType();
     }
 
-    public Beneficio(String brandName, String benefitText){
+    public Beneficio(String brandName, String benefitText, boolean size){
 
         this.brandName = brandName;
         this.benefitText = benefitText;
+        this.big = size;
 
         defineViewType();
     }

@@ -89,7 +89,7 @@ public class GoogleMapsDirections extends FragmentActivity {
 
         call.enqueue(new Callback<GoogleDirections>() {
             @Override
-            public void onResponse(Response<GoogleDirections> response) {
+            public void onResponse(Response<GoogleDirections> response, Retrofit retrofit) {
                 GoogleDirections directionResults = response.body();
 
                 ArrayList<LatLng> routelist = new ArrayList<>();

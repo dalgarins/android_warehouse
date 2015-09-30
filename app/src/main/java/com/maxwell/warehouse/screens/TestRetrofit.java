@@ -44,7 +44,7 @@ public class TestRetrofit extends ListActivity {
 
         call.enqueue(new Callback<List<Podcast>>() {
             @Override
-            public void onResponse(Response<List<Podcast>> response) {
+            public void onResponse(Response<List<Podcast>> response, Retrofit retrofit) {
                 // Get result Repo from response.body()
                 Log.i("debug_log", "nada");
 

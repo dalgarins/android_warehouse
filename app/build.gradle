@@ -27,7 +27,7 @@ dependencies {
     //libreria para recycleview
     compile 'com.android.support:recyclerview-v7:23.0.1'
     //libreria para pegarle a servicios, mejor que volley
-    compile 'com.squareup.retrofit:retrofit:2.+'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
     //libreria para manejar los modelos de json
     compile 'com.google.code.gson:gson:1.7.2'
     //libreria para interfacear entre retrofit y gson

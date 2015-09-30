@@ -54,7 +54,7 @@ public class GitHubApiDemo extends AppCompatActivity {
 
         call.enqueue(new Callback<GitHubUser>() {
             @Override
-            public void onResponse(Response<GitHubUser> response) {
+            public void onResponse(Response<GitHubUser> response, Retrofit retrofit) {
                 // Get result Repo from response.body()
                 GitHubUser res = response.body();
 

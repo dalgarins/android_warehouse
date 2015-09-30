@@ -5,7 +5,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.maxwell.warehouse.R;
+import com.maxwell.warehouse.models.Information;
 import com.maxwell.warehouse.utils.enums.InformationTypeEnum;
+import com.maxwell.warehouse.viewholders.ViewHolderBenefitNoDistance;
+import com.maxwell.warehouse.viewholders.ViewHolderBenefitWithDistance;
+import com.maxwell.warehouse.viewholders.ViewHolderFeaturedPromo;
 import com.maxwell.warehouse.viewholders.ViewHolderParent;
 
 /**
@@ -41,5 +45,17 @@ public class ViewHolderFactory {
         }
 
         return vh;
+    }
+
+    public static void populate(ViewHolderParent holder, Information information) {
+
+        //TODO refactor to extend of generic populate.
+        switch (InformationTypeEnum.getEnum(information.getViewType())){
+            case CARD_BENEFIT_BIG:
+            case CARD_BENEFIT_WITH_DISTANCE:
+            case CARD_FAVORITES:
+                break;
+        }
+        holder.populate(information);
     }
 }
