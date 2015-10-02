@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         itemsList.add(new Items(SaveFileDemo.class, "Save File Demo"));
         itemsList.add(new Items(UITesting.class, "UI Testing"));
         itemsList.add(new Items(RecycleWithFactory.class, "Recycle With Factory"));
+        itemsList.add(new Items(SimpleAnimation.class, "Simple Animation Demo"));
 
         RVAdapter adapter = new RVAdapter(itemsList, this);
         rv.setAdapter(adapter);
