@@ -22,14 +22,14 @@ import butterknife.ButterKnife;
  */
 public class UITesting extends AppCompatActivity {
     List<CardviewModel> itemsList = new ArrayList<>();
-    @Bind(R.id.rv)
+    @Bind(R.id.customRecyclerView)
     RecyclerView rv;
     CardViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.base_recycleview);
         ButterKnife.bind(this);
 
         rv.setHasFixedSize(true);
