@@ -41,29 +41,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeData() {
-        itemsList.add(new Items(MediaPlayerStreaming.class, "Media Player Streaming"));
-        itemsList.add(new Items(TestRetrofit.class, "Testing Retrofit"));
+        //SOCIAL
         itemsList.add(new Items(FacebookLogin.class, "Facebook Login"));
         itemsList.add(new Items(FacebookShare.class, "Facebook Share"));
+        //MULTIMEDIA
+        itemsList.add(new Items(MediaPlayerStreaming.class, "Media Player Streaming"));
         itemsList.add(new Items(GlideDemo.class, "Glide Demo"));
         itemsList.add(new Items(ZoomInZoomOut.class, "Zoom In Zoom Out"));
-        itemsList.add(new Items(GitHubApiDemo.class, "GitHub Api"));
         itemsList.add(new Items(TTS.class, "TTS Example"));
         itemsList.add(new Items(STT.class, "STT Example"));
         itemsList.add(new Items(AdvanceTTSAndSTT.class, "Advance TTS & STT Example"));
+        //DEVS
+        itemsList.add(new Items(TestRetrofit.class, "Testing Retrofit"));
+        itemsList.add(new Items(GitHubApiDemo.class, "GitHub Api"));
         itemsList.add(new Items(ButterKnifeDemo.class, "ButterKnife Demo"));
+        //UI
         itemsList.add(new Items(ParallaxDemo.class, "Parallax Demo"));
         itemsList.add(new Items(DrawerLayoutDemo.class, "DrawerLayout Demo"));
-        itemsList.add(new Items(GoogleMapsDemo.class, "GoogleMaps Demo"));
-        itemsList.add(new Items(GoogleMapsDirections.class, "GoogleMaps Trace Route"));
         itemsList.add(new Items(ParallaxWithCardView.class, "Parallax with CardView"));
         itemsList.add(new Items(SnackbarDemo.class, "Snackbar Demo"));
         itemsList.add(new Items(ActionBarDemo.class, "ActionBar Demo"));
         itemsList.add(new Items(NewsFragment.class, "Fragment Dinamico"));
-        itemsList.add(new Items(PrefsDemo.class, "Preferences Demo"));
-        itemsList.add(new Items(SaveFileDemo.class, "Save File Demo"));
         itemsList.add(new Items(UITesting.class, "UI Testing"));
         itemsList.add(new Items(RecycleWithFactory.class, "Recycle With Factory"));
+        //LOCALIZACION
+        itemsList.add(new Items(GoogleMapsDemo.class, "GoogleMaps Demo"));
+        itemsList.add(new Items(GoogleMapsDirections.class, "GoogleMaps Trace Route"));
+        //STORAGE
+        itemsList.add(new Items(PrefsDemo.class, "Preferences Demo"));
+        itemsList.add(new Items(SaveFileDemo.class, "Save File Demo"));
+        //ANIMACIONES
         itemsList.add(new Items(SimpleAnimation.class, "Simple Animation Demo"));
 
         RVAdapter adapter = new RVAdapter(itemsList, this);
