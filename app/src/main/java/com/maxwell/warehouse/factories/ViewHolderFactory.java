@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.maxwell.warehouse.R;
+import com.maxwell.warehouse.fragments.ListMultimediaFragment;
 import com.maxwell.warehouse.models.Information;
 import com.maxwell.warehouse.utils.enums.InformationTypeEnum;
 import com.maxwell.warehouse.viewholders.ViewHolderBenefitNoDistance;
@@ -23,25 +24,21 @@ public class ViewHolderFactory {
 
         switch (InformationTypeEnum.getEnum(viewType))
         {
-            case CARD_BENEFIT_WITH_DISTANCE:{
+            case CARD_BENEFIT_WITH_DISTANCE:
                 v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_benefit_with_distance, parent, false);
                 vh = new ViewHolderBenefitWithDistance(v);
                 break;
-            }
-            case CARD_BENEFIT_BIG:{
+            case CARD_BENEFIT_BIG:
                 v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_benefit_big, parent, false);
                 vh = new ViewHolderBenefitNoDistance(v);
                 break;
-            }
-            case CARD_PROMO_FEATURED:{
+            case CARD_PROMO_FEATURED:
                 v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_promo_featured, parent, false);
                 vh = new ViewHolderFeaturedPromo(v);
                 break;
-            }
-            default:{
+            default:
                 vh = null;
                 break;
-            }
         }
 
         return vh;
