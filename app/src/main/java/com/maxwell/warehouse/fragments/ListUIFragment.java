@@ -14,6 +14,7 @@ import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
 import com.maxwell.warehouse.screens.ActionBarDemo;
 import com.maxwell.warehouse.screens.ButterKnifeDemo;
+import com.maxwell.warehouse.screens.DialogDemo;
 import com.maxwell.warehouse.screens.DrawerLayoutDemo;
 import com.maxwell.warehouse.screens.GitHubApiDemo;
 import com.maxwell.warehouse.screens.NewsFragment;
@@ -50,6 +51,7 @@ public class ListUIFragment extends Fragment {
         itemsList.add(new Items(NewsFragment.class, "Fragment Dinamico"));
         itemsList.add(new Items(UITesting.class, "UI Testing"));
         itemsList.add(new Items(RecycleWithFactory.class, "Recycle With Factory"));
+        itemsList.add(new Items(DialogDemo.class, "Dialog With Parameters"));
 
         RVAdapter adapter = new RVAdapter(itemsList, getActivity());
         mRecyclerView.setAdapter(adapter);
