@@ -152,6 +152,14 @@
                 android:value=".screens.MainActivity" />
         </activity>
 
+        <activity
+            android:name=".screens.FontManagerDemo"
+            android:parentActivityName=".screens.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screens.MainActivity" />
+        </activity>
+
         <activity android:name=".screens.PrefsDemo" android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

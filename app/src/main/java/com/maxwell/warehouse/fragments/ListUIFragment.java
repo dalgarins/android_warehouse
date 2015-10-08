@@ -16,6 +16,7 @@ import com.maxwell.warehouse.screens.ActionBarDemo;
 import com.maxwell.warehouse.screens.ButterKnifeDemo;
 import com.maxwell.warehouse.screens.DialogDemo;
 import com.maxwell.warehouse.screens.DrawerLayoutDemo;
+import com.maxwell.warehouse.screens.FontManagerDemo;
 import com.maxwell.warehouse.screens.GitHubApiDemo;
 import com.maxwell.warehouse.screens.NewsFragment;
 import com.maxwell.warehouse.screens.ParallaxDemo;
@@ -24,6 +25,7 @@ import com.maxwell.warehouse.screens.RecycleWithFactory;
 import com.maxwell.warehouse.screens.SnackbarDemo;
 import com.maxwell.warehouse.screens.TestRetrofit;
 import com.maxwell.warehouse.screens.UITesting;
+import com.maxwell.warehouse.utils.FontManger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +54,7 @@ public class ListUIFragment extends Fragment {
         itemsList.add(new Items(UITesting.class, "UI Testing"));
         itemsList.add(new Items(RecycleWithFactory.class, "Recycle With Factory"));
         itemsList.add(new Items(DialogDemo.class, "Dialog With Parameters"));
+        itemsList.add(new Items(FontManagerDemo.class, "Font Manager Demo"));
 
         RVAdapter adapter = new RVAdapter(itemsList, getActivity());
         mRecyclerView.setAdapter(adapter);
