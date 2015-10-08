@@ -19,8 +19,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".screens.MainActivity"
-            android:theme="@style/AppThemeHome"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/AppThemeHome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -160,37 +160,53 @@
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.PrefsDemo" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.ScrollBarDemo"
+            android:theme="@style/AppThemeHome" />
+
+        <activity
+            android:name=".screens.PrefsDemo"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.SaveFileDemo" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.SaveFileDemo"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.UITesting" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.UITesting"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.RecycleWithFactory" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.RecycleWithFactory"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.SimpleAnimation" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.SimpleAnimation"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />
         </activity>
 
-        <activity android:name=".screens.DialogDemo" android:parentActivityName=".screens.MainActivity">
+        <activity
+            android:name=".screens.DialogDemo"
+            android:parentActivityName=".screens.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.MainActivity" />

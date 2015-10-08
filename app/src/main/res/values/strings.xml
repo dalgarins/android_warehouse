@@ -5,6 +5,20 @@
     <string name="drawer_open">Open Drawer</string>
     <string name="drawer_close">Close Drawer</string>
     <string name="title_activity_google_maps_demo">Map</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est. Aliquam commodo bibendum accumsan.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est.
+        Donec dapibus lorem justo, id tempor mauris tincidunt eget. Donec viverra aliquam mauris, sed efficitur metus ultrices quis.
+        Morbi quis hendrerit dui, ac varius sem. Donec congue aliquet luctus. Nulla laoreet, nulla in semper condimentum, felis ligula molestie quam, ac mollis ex augue a libero.
+        Donec imperdiet porttitor ultricies. Etiam suscipit orci eu elit auctor, eu euismod lectus dictum. Donec at augue euismod ligula blandit faucibus.
+        Fusce vel lacus porttitor, porta ligula ac, vehicula ipsum. Cras id eros leo.</string>
 
     <string-array name="frases">
         <item>La posibilidad de realizar un sueño es lo que hace que la vida sea interesante.</item>
