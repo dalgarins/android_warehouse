@@ -220,6 +220,9 @@
                 android:value=".screens.MainActivity" />
         </activity>
 
+        <activity android:name=".screens.LocationDemo"></activity>
+        <activity android:name=".screens.LocationListenerDemo"></activity>
+
         <!-- FACEBOOK BEGIN -->
         <activity
             android:name="com.facebook.FacebookActivity"

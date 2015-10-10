@@ -16,6 +16,8 @@ import com.maxwell.warehouse.screens.ActionBarDemo;
 import com.maxwell.warehouse.screens.DrawerLayoutDemo;
 import com.maxwell.warehouse.screens.GoogleMapsDemo;
 import com.maxwell.warehouse.screens.GoogleMapsDirections;
+import com.maxwell.warehouse.screens.LocationDemo;
+import com.maxwell.warehouse.screens.LocationListenerDemo;
 import com.maxwell.warehouse.screens.NewsFragment;
 import com.maxwell.warehouse.screens.ParallaxDemo;
 import com.maxwell.warehouse.screens.ParallaxWithCardView;
@@ -43,6 +45,8 @@ public class ListLocationFragment extends Fragment {
 
         itemsList.add(new Items(GoogleMapsDemo.class, "GoogleMaps Demo"));
         itemsList.add(new Items(GoogleMapsDirections.class, "GoogleMaps Trace Route"));
+        itemsList.add(new Items(LocationDemo.class, "Location with GPS"));
+        itemsList.add(new Items(LocationListenerDemo.class, "Location Listener"));
 
         RVAdapter adapter = new RVAdapter(itemsList, getActivity());
         mRecyclerView.setAdapter(adapter);

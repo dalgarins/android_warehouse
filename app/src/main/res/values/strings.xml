@@ -45,4 +45,9 @@
         <item>http://i.ytimg.com/vi/fJF6bo56TrE/hqdefault.jpg</item>
         <item>https://vdmuriel9.files.wordpress.com/2011/08/img-1.jpg</item>
     </string-array>
+
+    <string name="lbl_you_are_at">YOU ARE AT</string>
+    <string name="btn_get_location">GET MY LOCATION</string>
+    <string name="btn_start_location_updates">START LOCATION UPDATES</string>
+    <string name="btn_stop_location_updates">STOP LOCATION UPDATES</string>
 </resources>
