@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.maxwell.warehouse.R;
-import com.maxwell.warehouse.fragments.ListMultimediaFragment;
 import com.maxwell.warehouse.models.Information;
 import com.maxwell.warehouse.utils.enums.InformationTypeEnum;
 import com.maxwell.warehouse.viewholders.ViewHolderBenefitNoDistance;

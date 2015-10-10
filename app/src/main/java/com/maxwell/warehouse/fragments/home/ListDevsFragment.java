@@ -1,4 +1,4 @@
-package com.maxwell.warehouse.fragments;
+package com.maxwell.warehouse.fragments.home;
 
 import android.content.Context;
 import android.os.Bundle;

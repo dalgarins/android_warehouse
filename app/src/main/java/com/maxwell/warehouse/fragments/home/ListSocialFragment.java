@@ -1,4 +1,4 @@
-package com.maxwell.warehouse.fragments;
+package com.maxwell.warehouse.fragments.home;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,10 +12,9 @@ import android.view.ViewGroup;
 import com.maxwell.warehouse.R;
 import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
-import com.maxwell.warehouse.screens.GoogleMapsDemo;
-import com.maxwell.warehouse.screens.GoogleMapsDirections;
-import com.maxwell.warehouse.screens.PrefsDemo;
-import com.maxwell.warehouse.screens.SaveFileDemo;
+import com.maxwell.warehouse.screens.FacebookLogin;
+import com.maxwell.warehouse.screens.FacebookShare;
+import com.maxwell.warehouse.screens.SharingDemo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +22,7 @@ import java.util.List;
 /**
  * Created by Maxwell on 02/10/2015.
  */
-public class ListStorageFragment extends Fragment {
+public class ListSocialFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -35,8 +34,9 @@ public class ListStorageFragment extends Fragment {
 
         List<Items> itemsList = new ArrayList<>();
 
-        itemsList.add(new Items(PrefsDemo.class, "Preferences Demo"));
-        itemsList.add(new Items(SaveFileDemo.class, "Save File Demo"));
+        itemsList.add(new Items(FacebookLogin.class, "Facebook Login"));
+        itemsList.add(new Items(FacebookShare.class, "Facebook Share"));
+        itemsList.add(new Items(SharingDemo.class, "Sharing Demo"));
 
         RVAdapter adapter = new RVAdapter(itemsList, getActivity());
         mRecyclerView.setAdapter(adapter);

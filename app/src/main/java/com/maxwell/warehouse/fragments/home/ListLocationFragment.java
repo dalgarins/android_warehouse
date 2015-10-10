@@ -1,4 +1,4 @@
-package com.maxwell.warehouse.fragments;
+package com.maxwell.warehouse.fragments.home;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,9 +12,16 @@ import android.view.ViewGroup;
 import com.maxwell.warehouse.R;
 import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
-import com.maxwell.warehouse.screens.PrefsDemo;
-import com.maxwell.warehouse.screens.SaveFileDemo;
-import com.maxwell.warehouse.screens.SimpleAnimation;
+import com.maxwell.warehouse.screens.ActionBarDemo;
+import com.maxwell.warehouse.screens.DrawerLayoutDemo;
+import com.maxwell.warehouse.screens.GoogleMapsDemo;
+import com.maxwell.warehouse.screens.GoogleMapsDirections;
+import com.maxwell.warehouse.screens.NewsFragment;
+import com.maxwell.warehouse.screens.ParallaxDemo;
+import com.maxwell.warehouse.screens.ParallaxWithCardView;
+import com.maxwell.warehouse.screens.RecycleWithFactory;
+import com.maxwell.warehouse.screens.SnackbarDemo;
+import com.maxwell.warehouse.screens.UITesting;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +29,7 @@ import java.util.List;
 /**
  * Created by Maxwell on 02/10/2015.
  */
-public class ListAnimationsFragment extends Fragment {
+public class ListLocationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -34,7 +41,8 @@ public class ListAnimationsFragment extends Fragment {
 
         List<Items> itemsList = new ArrayList<>();
 
-        itemsList.add(new Items(SimpleAnimation.class, "Simple Animation Demo"));
+        itemsList.add(new Items(GoogleMapsDemo.class, "GoogleMaps Demo"));
+        itemsList.add(new Items(GoogleMapsDirections.class, "GoogleMaps Trace Route"));
 
         RVAdapter adapter = new RVAdapter(itemsList, getActivity());
         mRecyclerView.setAdapter(adapter);

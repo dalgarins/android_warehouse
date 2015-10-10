@@ -1,4 +1,4 @@
-package com.maxwell.warehouse.fragments;
+package com.maxwell.warehouse.fragments.home;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,14 +12,9 @@ import android.view.ViewGroup;
 import com.maxwell.warehouse.R;
 import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
-import com.maxwell.warehouse.screens.AdvanceTTSAndSTT;
-import com.maxwell.warehouse.screens.FacebookLogin;
-import com.maxwell.warehouse.screens.FacebookShare;
-import com.maxwell.warehouse.screens.GlideDemo;
-import com.maxwell.warehouse.screens.MediaPlayerStreaming;
-import com.maxwell.warehouse.screens.STT;
-import com.maxwell.warehouse.screens.TTS;
-import com.maxwell.warehouse.screens.ZoomInZoomOut;
+import com.maxwell.warehouse.screens.PrefsDemo;
+import com.maxwell.warehouse.screens.SaveFileDemo;
+import com.maxwell.warehouse.screens.SimpleAnimation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +22,7 @@ import java.util.List;
 /**
  * Created by Maxwell on 02/10/2015.
  */
-public class ListMultimediaFragment extends Fragment {
+public class ListAnimationsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -39,12 +34,7 @@ public class ListMultimediaFragment extends Fragment {
 
         List<Items> itemsList = new ArrayList<>();
 
-        itemsList.add(new Items(MediaPlayerStreaming.class, "Media Player Streaming"));
-        itemsList.add(new Items(GlideDemo.class, "Glide Demo"));
-        itemsList.add(new Items(ZoomInZoomOut.class, "Zoom In Zoom Out"));
-        itemsList.add(new Items(TTS.class, "TTS Example"));
-        itemsList.add(new Items(STT.class, "STT Example"));
-        itemsList.add(new Items(AdvanceTTSAndSTT.class, "Advance TTS & STT Example"));
+        itemsList.add(new Items(SimpleAnimation.class, "Simple Animation Demo"));
 
         RVAdapter adapter = new RVAdapter(itemsList, getActivity());
         mRecyclerView.setAdapter(adapter);
