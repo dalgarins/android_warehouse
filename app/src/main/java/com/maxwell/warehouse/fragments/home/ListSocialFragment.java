@@ -12,9 +12,9 @@ import android.view.ViewGroup;
 import com.maxwell.warehouse.R;
 import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
-import com.maxwell.warehouse.screens.FacebookLogin;
-import com.maxwell.warehouse.screens.FacebookShare;
-import com.maxwell.warehouse.screens.SharingDemo;
+import com.maxwell.warehouse.activities.social.FacebookLogin;
+import com.maxwell.warehouse.activities.social.FacebookShare;
+import com.maxwell.warehouse.activities.social.SharingDemo;
 
 import java.util.ArrayList;
 import java.util.List;

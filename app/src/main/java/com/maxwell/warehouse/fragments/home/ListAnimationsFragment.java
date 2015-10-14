@@ -12,9 +12,7 @@ import android.view.ViewGroup;
 import com.maxwell.warehouse.R;
 import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
-import com.maxwell.warehouse.screens.PrefsDemo;
-import com.maxwell.warehouse.screens.SaveFileDemo;
-import com.maxwell.warehouse.screens.SimpleAnimation;
+import com.maxwell.warehouse.activities.animations.SimpleAnimation;
 
 import java.util.ArrayList;
 import java.util.List;

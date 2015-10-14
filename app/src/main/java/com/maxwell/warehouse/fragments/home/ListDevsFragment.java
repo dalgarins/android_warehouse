@@ -12,15 +12,9 @@ import android.view.ViewGroup;
 import com.maxwell.warehouse.R;
 import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
-import com.maxwell.warehouse.screens.AdvanceTTSAndSTT;
-import com.maxwell.warehouse.screens.ButterKnifeDemo;
-import com.maxwell.warehouse.screens.GitHubApiDemo;
-import com.maxwell.warehouse.screens.GlideDemo;
-import com.maxwell.warehouse.screens.MediaPlayerStreaming;
-import com.maxwell.warehouse.screens.STT;
-import com.maxwell.warehouse.screens.TTS;
-import com.maxwell.warehouse.screens.TestRetrofit;
-import com.maxwell.warehouse.screens.ZoomInZoomOut;
+import com.maxwell.warehouse.activities.devs.ButterKnifeDemo;
+import com.maxwell.warehouse.activities.devs.GitHubApiDemo;
+import com.maxwell.warehouse.activities.devs.TestRetrofit;
 
 import java.util.ArrayList;
 import java.util.List;
