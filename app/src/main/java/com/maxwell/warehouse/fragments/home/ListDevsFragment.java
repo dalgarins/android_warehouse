@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.maxwell.warehouse.R;
+import com.maxwell.warehouse.activities.devs.YodaSpeak;
 import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
 import com.maxwell.warehouse.activities.devs.ButterKnifeDemo;
@@ -37,6 +38,7 @@ public class ListDevsFragment extends Fragment {
         itemsList.add(new Items(TestRetrofit.class, "Testing Retrofit"));
         itemsList.add(new Items(GitHubApiDemo.class, "GitHub Api"));
         itemsList.add(new Items(ButterKnifeDemo.class, "ButterKnife Demo"));
+        itemsList.add(new Items(YodaSpeak.class, "Yoda Speak"));
 
         RVAdapter adapter = new RVAdapter(itemsList, getActivity());
         mRecyclerView.setAdapter(adapter);
