@@ -1,5 +1,6 @@
 package com.maxwell.warehouse.activities.devs;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -40,14 +41,24 @@ public class YodaSpeak extends AppCompatActivity {
 
         Call<String> call = service.getMessage("You must be brave");
 
+        final ProgressDialog mProgressDialog = new ProgressDialog(this);
+        mProgressDialog.setIndeterminate(true);
+        mProgressDialog.setMessage("Loading...");
+        mProgressDialog.show();
+
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Response<String> response, Retrofit retrofit) {
+                if (mProgressDialog.isShowing())
+                    mProgressDialog.dismiss();
                 simpleText.setText(response.body());
             }
 
             @Override
             public void onFailure(Throwable t) {
+                if (mProgressDialog.isShowing())
+                    mProgressDialog.dismiss();
+
                 Log.d(Constants.DEBUG,t.getMessage());
             }
         });
