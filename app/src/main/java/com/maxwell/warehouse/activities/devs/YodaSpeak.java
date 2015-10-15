@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.maxwell.warehouse.R;
+import com.maxwell.warehouse.converters.ToStringConverterFactory;
 import com.maxwell.warehouse.interfaces.YodaSpeakService;
 import com.maxwell.warehouse.utils.Constants;
 
@@ -32,12 +33,12 @@ public class YodaSpeak extends AppCompatActivity {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constants.API_YODA_SPEAK)
-                //.addConverterFactory(new ToStringConverterFactory())
+                .addConverterFactory(new ToStringConverterFactory())
                 .build();
 
         YodaSpeakService service = retrofit.create(YodaSpeakService.class);
 
-        Call<String> call = service.getMessage("Hello!+how+are+you%3F");
+        Call<String> call = service.getMessage("You must be brave");
 
         call.enqueue(new Callback<String>() {
             @Override
