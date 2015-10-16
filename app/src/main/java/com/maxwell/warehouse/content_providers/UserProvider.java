@@ -87,7 +87,7 @@ public class UserProvider extends ContentProvider {
     @Nullable
     @Override
     public Uri insert(Uri uri, ContentValues contentValues) {
-        long rowID = db.insert(dbHelper.TABLE_NAME, "", contentValues);
+        long rowID = db.insert(dbHelper.TABLE_NAME, null, contentValues);
         if (rowID > 0) {
             Uri _uri = ContentUris.withAppendedId(CONTENT_URI, rowID);
             getContext().getContentResolver().notifyChange(_uri, null);

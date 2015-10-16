@@ -18,7 +18,7 @@ import com.maxwell.warehouse.content_providers.UserProvider;
 /**
  * Created by root on 14/10/15.
  */
-public class ContactsList extends AppCompatActivity{
+public class UserList extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
