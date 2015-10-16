@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.maxwell.warehouse.R;
+import com.maxwell.warehouse.activities.storage.SQLiteDemo;
 import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
 import com.maxwell.warehouse.activities.storage.PrefsDemo;
@@ -35,6 +36,7 @@ public class ListStorageFragment extends Fragment {
 
         itemsList.add(new Items(PrefsDemo.class, "Preferences Demo"));
         itemsList.add(new Items(SaveFileDemo.class, "Save File Demo"));
+        itemsList.add(new Items(SQLiteDemo.class, "SQLite Demo"));
 
         RVAdapter adapter = new RVAdapter(itemsList, getActivity());
         mRecyclerView.setAdapter(adapter);
