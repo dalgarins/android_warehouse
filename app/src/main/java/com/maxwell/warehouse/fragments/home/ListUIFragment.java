@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.maxwell.warehouse.R;
+import com.maxwell.warehouse.activities.user_interface.ContactsList;
 import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
 import com.maxwell.warehouse.activities.user_interface.ActionBarDemo;
@@ -53,6 +54,7 @@ public class ListUIFragment extends Fragment {
         itemsList.add(new Items(DialogDemo.class, "Dialog With Parameters"));
         itemsList.add(new Items(FontManagerDemo.class, "Font Manager Demo"));
         itemsList.add(new Items(ScrollBarDemo.class, "ScrollBar Demo"));
+        itemsList.add(new Items(ContactsList.class, "Contacts List with Contact Provider"));
 
         RVAdapter adapter = new RVAdapter(itemsList, getActivity());
         mRecyclerView.setAdapter(adapter);

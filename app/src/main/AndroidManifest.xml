@@ -225,6 +225,7 @@
         <activity android:name=".activities.location.LocationListenerDemo"></activity>
         <activity android:name=".activities.devs.YodaSpeak"></activity>
         <activity android:name=".activities.storage.SQLiteDemo"></activity>
+        <activity android:name=".activities.user_interface.ContactsList"></activity>
 
         <!-- FACEBOOK BEGIN -->
         <activity
@@ -258,6 +259,12 @@
             android:name=".activities.location.GoogleMapsDirections"
             android:label="@string/title_activity_google_maps_demo" />
         <!-- GOOGLE MAPS END -->
+
+        <provider
+            android:name=".content_providers.UserProvider"
+            android:authorities="com.maxwell.warehouse.content_providers.UserProvider">
+        </provider>
+
     </application>
 
 </manifest>
