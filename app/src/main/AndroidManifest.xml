@@ -226,6 +226,7 @@
         <activity android:name=".activities.devs.YodaSpeak"></activity>
         <activity android:name=".activities.storage.SQLiteDemo"></activity>
         <activity android:name=".activities.user_interface.UserList"></activity>
+        <activity android:name=".activities.devs.GitHubApiWithVolley"></activity>
 
         <!-- FACEBOOK BEGIN -->
         <activity

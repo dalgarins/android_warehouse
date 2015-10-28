@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.maxwell.warehouse.R;
+import com.maxwell.warehouse.activities.devs.GitHubApiWithVolley;
 import com.maxwell.warehouse.activities.devs.YodaSpeak;
 import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
@@ -39,6 +40,7 @@ public class ListDevsFragment extends Fragment {
         itemsList.add(new Items(GitHubApiDemo.class, "GitHub Api"));
         itemsList.add(new Items(ButterKnifeDemo.class, "ButterKnife Demo"));
         itemsList.add(new Items(YodaSpeak.class, "Yoda Speak"));
+        itemsList.add(new Items(GitHubApiWithVolley.class, "GitHub Api with Volley"));
 
         RVAdapter adapter = new RVAdapter(itemsList, getActivity());
         mRecyclerView.setAdapter(adapter);
