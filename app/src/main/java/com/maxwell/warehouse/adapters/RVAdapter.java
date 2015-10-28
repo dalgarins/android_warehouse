@@ -30,25 +30,13 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ItemViewHolder>{
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_main, viewGroup, false);
-        ItemViewHolder pvh = new ItemViewHolder(v);
+        ItemViewHolder pvh = new ItemViewHolder(v,ctx);
         return pvh;
     }
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        final Class className = itemsList.get(position).getClassItem();
-
-        holder.nameItem.setText(itemsList.get(position).getNameItem());
-
-
-
-        holder.rlItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ctx,className);
-                ctx.startActivity(i);
-            }
-        });
+        holder.populate(itemsList.get(position));
     }
 
     @Override
@@ -65,12 +53,29 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ItemViewHolder>{
         TextView nameItem;
         RelativeLayout rlItem;
         CardView cardView;
+        Context ctx;
 
-        ItemViewHolder(View itemView) {
+        ItemViewHolder(View itemView, Context ctx) {
             super(itemView);
+            this.ctx = ctx;
+
             nameItem = (TextView)itemView.findViewById(R.id.nameItem);
             rlItem = (RelativeLayout)itemView.findViewById(R.id.rlItem);
             cardView = (CardView)itemView.findViewById(R.id.cardView);
+        }
+
+        public void populate(Items itemsList){
+            final Class className = itemsList.getClassItem();
+
+            nameItem.setText(itemsList.getNameItem());
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(ctx,className);
+                    ctx.startActivity(i);
+                }
+            });
         }
     }
 }
