@@ -23,7 +23,6 @@ public class HomeAdapter extends FragmentPagerAdapter
 
     private List<Fragment> mListPages;
 
-    //TODO titles
     private String[] titles = new String[]{
             "Social",
             "Multimedia",

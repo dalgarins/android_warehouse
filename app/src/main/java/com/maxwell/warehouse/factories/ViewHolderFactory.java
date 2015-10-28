@@ -44,14 +44,6 @@ public class ViewHolderFactory {
     }
 
     public static void populate(ViewHolderParent holder, Information information) {
-
-        //TODO refactor to extend of generic populate.
-        switch (InformationTypeEnum.getEnum(information.getViewType())){
-            case CARD_BENEFIT_BIG:
-            case CARD_BENEFIT_WITH_DISTANCE:
-            case CARD_FAVORITES:
-                break;
-        }
         holder.populate(information);
     }
 }
