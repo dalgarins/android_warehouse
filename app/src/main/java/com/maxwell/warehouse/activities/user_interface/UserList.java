@@ -1,19 +1,15 @@
 package com.maxwell.warehouse.activities.user_interface;
 
-import android.content.ContentResolver;
 import android.content.ContentValues;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.maxwell.warehouse.R;
-import com.maxwell.warehouse.content_providers.UserProvider;
+import com.maxwell.warehouse.providers.UserProvider;
 
 /**
  * Created by root on 14/10/15.

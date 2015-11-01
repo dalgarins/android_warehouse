@@ -262,8 +262,8 @@
         <!-- GOOGLE MAPS END -->
 
         <provider
-            android:name=".content_providers.UserProvider"
-            android:authorities="com.maxwell.warehouse.content_providers.UserProvider">
+            android:name=".providers.UserProvider"
+            android:authorities="com.maxwell.warehouse.providers.UserProvider">
         </provider>
 
     </application>

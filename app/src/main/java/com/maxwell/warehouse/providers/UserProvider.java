@@ -1,4 +1,4 @@
-package com.maxwell.warehouse.content_providers;
+package com.maxwell.warehouse.providers;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;
