@@ -16,7 +16,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.maxwell.warehouse.R;
 
@@ -64,6 +66,17 @@ public class VideoCaptureDemo extends AppCompatActivity implements View.OnClickL
         startActivityForResult(intent, CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE);
     }
 
+    public void playVideo(){
+        VideoView vd = (VideoView) findViewById(R.id.VideoView);
+        //Uri uri = Uri.parse("android.resource://" + getPackageName() + "/"+R.raw.VideoName);
+        Uri uri = Uri.parse(lastVideoRecorded);
+        MediaController mc = new MediaController(this);
+        vd.setMediaController(mc);
+        vd.requestFocus();
+        vd.setVideoURI(uri);
+        vd.start();
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -71,6 +84,7 @@ public class VideoCaptureDemo extends AppCompatActivity implements View.OnClickL
                 newVideo();
                 break;
             case R.id.playVideo:
+                playVideo();
                 break;
         }
     }

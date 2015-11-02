@@ -3,7 +3,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <VideoView android:layout_height="250dp"
+        android:layout_width="match_parent"
+        android:id="@+id/VideoView"></VideoView>
+
     <Button
+        android:layout_below="@+id/VideoView"
         android:id="@+id/newVideoButton"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
