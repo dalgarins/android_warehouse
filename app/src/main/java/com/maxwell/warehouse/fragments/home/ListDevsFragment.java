@@ -24,27 +24,16 @@ import java.util.List;
 /**
  * Created by Maxwell on 02/10/2015.
  */
-public class ListDevsFragment extends Fragment {
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    {
-        Context context = container.getContext();
-        View v = LayoutInflater.from(context).inflate(R.layout.base_recycleview, container, false);
-        RecyclerView mRecyclerView = (RecyclerView) v.findViewById(R.id.customRecyclerView);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(container.getContext(), 1));
-        mRecyclerView.setHasFixedSize(false);
+public class ListDevsFragment extends ParentListFragment {
+    List<Items> singleItemList = new ArrayList<>();
 
-        List<Items> itemsList = new ArrayList<>();
+    public ListDevsFragment(){
+        singleItemList.add(new Items(TestRetrofit.class, "Testing Retrofit"));
+        singleItemList.add(new Items(GitHubApiDemo.class, "GitHub Api"));
+        singleItemList.add(new Items(ButterKnifeDemo.class, "ButterKnife Demo"));
+        singleItemList.add(new Items(YodaSpeak.class, "Yoda Speak"));
+        singleItemList.add(new Items(GitHubApiWithVolley.class, "GitHub Api with Volley"));
 
-        itemsList.add(new Items(TestRetrofit.class, "Testing Retrofit"));
-        itemsList.add(new Items(GitHubApiDemo.class, "GitHub Api"));
-        itemsList.add(new Items(ButterKnifeDemo.class, "ButterKnife Demo"));
-        itemsList.add(new Items(YodaSpeak.class, "Yoda Speak"));
-        itemsList.add(new Items(GitHubApiWithVolley.class, "GitHub Api with Volley"));
-
-        RVAdapter adapter = new RVAdapter(itemsList, getActivity());
-        mRecyclerView.setAdapter(adapter);
-
-        return v;
+        populateList(singleItemList);
     }
 }

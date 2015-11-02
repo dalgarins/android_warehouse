@@ -1,5 +1,6 @@
 package com.maxwell.warehouse.adapters;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -11,6 +12,7 @@ import com.maxwell.warehouse.fragments.home.ListMultimediaFragment;
 import com.maxwell.warehouse.fragments.home.ListSocialFragment;
 import com.maxwell.warehouse.fragments.home.ListStorageFragment;
 import com.maxwell.warehouse.fragments.home.ListUIFragment;
+import com.maxwell.warehouse.fragments.home.ParentListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +39,9 @@ public class HomeAdapter extends FragmentPagerAdapter
         super(fm);
 
         mListPages = new ArrayList<>();
+
+        Bundle social = new Bundle();
+        //social.putParcelableArrayList();
 
         mListPages.add(new ListSocialFragment());
         mListPages.add(new ListMultimediaFragment());
