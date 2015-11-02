@@ -2,6 +2,7 @@ package com.maxwell.warehouse.activities.storage;
 
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -28,6 +29,8 @@ public class FileExplorerDemo extends AppCompatActivity {
     List<Information> mListInformation = new ArrayList<>();
     @Bind(R.id.customRecyclerView)
     RecyclerView rv;
+    @Bind(R.id.swipeRefreshLayout)
+    SwipeRefreshLayout swipeRefreshLayout;
     private GenericAdapterFactory adapterFactory;
 
 
@@ -41,10 +44,22 @@ public class FileExplorerDemo extends AppCompatActivity {
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
 
+        adapterFactory = new GenericAdapterFactory(mListInformation);
+        rv.setAdapter(adapterFactory);
+
         buildFilesList();
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                buildFilesList();
+            }
+        });
     }
 
     private void buildFilesList() {
+        mListInformation.clear();
+
         String path = Environment.getExternalStorageDirectory().toString();
         File f = new File(path);
         File file[] = f.listFiles();
@@ -53,7 +68,8 @@ public class FileExplorerDemo extends AppCompatActivity {
             mListInformation.add(new SimpleItem(file[i].getName()));
         }
 
-        adapterFactory = new GenericAdapterFactory(mListInformation);
-        rv.setAdapter(adapterFactory);
+        adapterFactory.notifyDataSetChanged();
+
+        swipeRefreshLayout.setRefreshing(false);
     }
 }

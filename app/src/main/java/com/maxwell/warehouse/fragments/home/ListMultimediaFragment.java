@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.maxwell.warehouse.R;
 import com.maxwell.warehouse.activities.multimedia.VideoCaptureDemo;
+import com.maxwell.warehouse.activities.multimedia.VideoStreamingDemo;
 import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
 import com.maxwell.warehouse.activities.multimedia.AdvanceTTSAndSTT;
@@ -45,6 +46,7 @@ public class ListMultimediaFragment extends Fragment {
         itemsList.add(new Items(STT.class, "STT Example"));
         itemsList.add(new Items(AdvanceTTSAndSTT.class, "Advance TTS & STT Example"));
         itemsList.add(new Items(VideoCaptureDemo.class, "Video Capture Demo"));
+        itemsList.add(new Items(VideoStreamingDemo.class, "Video Streaming Demo"));
 
         RVAdapter adapter = new RVAdapter(itemsList, getActivity());
         mRecyclerView.setAdapter(adapter);

@@ -1,6 +1,7 @@
 package com.maxwell.warehouse.activities.user_interface;
 
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,22 +15,45 @@ import com.maxwell.warehouse.models.PromoFeatured;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * Created by Maxwell on 30/09/2015.
  */
 public class RecycleWithFactory extends AppCompatActivity {
     private GenericAdapterFactory adapterFactory;
     private Beneficio beneficio;
+    List<Information> mListInformation = new ArrayList<>();
+    @Bind(R.id.swipeRefreshLayout)
+    SwipeRefreshLayout swipeRefreshLayout;
+    @Bind(R.id.customRecyclerView)
+    RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.base_recycleview);
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.customRecyclerView);
+        ButterKnife.bind(this);
+
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         mRecyclerView.setHasFixedSize(false);
 
-        List<Information> mListInformation = new ArrayList<>();
+        adapterFactory = new GenericAdapterFactory(mListInformation);
+        mRecyclerView.setAdapter(adapterFactory);
+
+        loadInfo();
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadInfo();
+            }
+        });
+    }
+
+    private void loadInfo(){
+        mListInformation.clear();
 
         mListInformation.add(new PromoFeatured());
         mListInformation.add(new PromoFeatured());
@@ -44,7 +68,8 @@ public class RecycleWithFactory extends AppCompatActivity {
 
         mListInformation.add(new PromoFeatured());
 
-        GenericAdapterFactory featuredAdapter = new GenericAdapterFactory(mListInformation);
-        mRecyclerView.setAdapter(featuredAdapter);
+        adapterFactory.notifyDataSetChanged();
+
+        swipeRefreshLayout.setRefreshing(false);
     }
 }
