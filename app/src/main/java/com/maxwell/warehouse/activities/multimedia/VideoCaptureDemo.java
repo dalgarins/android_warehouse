@@ -17,6 +17,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.MediaController;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.widget.VideoView;
 
@@ -68,7 +69,12 @@ public class VideoCaptureDemo extends AppCompatActivity implements View.OnClickL
 
     public void playVideo(){
         VideoView vd = (VideoView) findViewById(R.id.VideoView);
-        //Uri uri = Uri.parse("android.resource://" + getPackageName() + "/"+R.raw.VideoName);
+        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)vd.getLayoutParams();
+        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT, 0);
+        layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, 0);
+        vd.setLayoutParams(layoutParams);
+        vd.setVisibility(View.VISIBLE);
+
         Uri uri = Uri.parse(lastVideoRecorded);
         MediaController mc = new MediaController(this);
         vd.setMediaController(mc);
