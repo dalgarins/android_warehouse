@@ -229,6 +229,7 @@
         <activity android:name=".activities.user_interface.UserList"></activity>
         <activity android:name=".activities.devs.GitHubApiWithVolley"></activity>
         <activity android:name=".activities.multimedia.VideoCaptureDemo"></activity>
+        <activity android:name=".activities.storage.FileExplorerDemo"></activity>
 
         <!-- FACEBOOK BEGIN -->
         <activity

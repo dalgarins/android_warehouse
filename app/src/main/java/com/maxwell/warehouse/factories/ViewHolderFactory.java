@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import com.maxwell.warehouse.R;
 import com.maxwell.warehouse.models.Information;
 import com.maxwell.warehouse.utils.enums.InformationTypeEnum;
+import com.maxwell.warehouse.viewholders.SimpleItemViewHolder;
 import com.maxwell.warehouse.viewholders.ViewHolderBenefitNoDistance;
 import com.maxwell.warehouse.viewholders.ViewHolderBenefitWithDistance;
 import com.maxwell.warehouse.viewholders.ViewHolderFeaturedPromo;
@@ -34,6 +35,10 @@ public class ViewHolderFactory {
             case CARD_PROMO_FEATURED:
                 v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_promo_featured, parent, false);
                 vh = new ViewHolderFeaturedPromo(v);
+                break;
+            case SIMPLE_ITEM:
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_main, parent, false);
+                vh = new SimpleItemViewHolder(v);
                 break;
             default:
                 vh = null;

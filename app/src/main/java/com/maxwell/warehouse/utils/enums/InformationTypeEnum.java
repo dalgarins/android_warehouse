@@ -4,7 +4,8 @@ package com.maxwell.warehouse.utils.enums;
  * Created by Maxwell on 30/09/2015.
  */
 public enum InformationTypeEnum {
-    INFORMATION(1), CARD_BENEFIT_WITH_DISTANCE(2), CARD_BENEFIT_BIG(3), CARD_FAVORITES(4), CARD_PROMO_FEATURED(5);
+    INFORMATION(1), CARD_BENEFIT_WITH_DISTANCE(2), CARD_BENEFIT_BIG(3), CARD_FAVORITES(4), CARD_PROMO_FEATURED(5),
+    SIMPLE_ITEM(6);
     private int viewTypeId;
 
     InformationTypeEnum(int viewTypeId){
