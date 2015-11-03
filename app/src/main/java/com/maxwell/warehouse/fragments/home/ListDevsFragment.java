@@ -25,15 +25,24 @@ import java.util.List;
  * Created by Maxwell on 02/10/2015.
  */
 public class ListDevsFragment extends ParentListFragment {
-    List<Items> singleItemList = new ArrayList<>();
 
-    public ListDevsFragment(){
-        singleItemList.add(new Items(TestRetrofit.class, "Testing Retrofit"));
-        singleItemList.add(new Items(GitHubApiDemo.class, "GitHub Api"));
-        singleItemList.add(new Items(ButterKnifeDemo.class, "ButterKnife Demo"));
-        singleItemList.add(new Items(YodaSpeak.class, "Yoda Speak"));
-        singleItemList.add(new Items(GitHubApiWithVolley.class, "GitHub Api with Volley"));
 
-        populateList(singleItemList);
+    public ListDevsFragment() {
+        itemsList.add(new Items(TestRetrofit.class, "Testing Retrofit"));
+        itemsList.add(new Items(GitHubApiDemo.class, "GitHub Api"));
+        itemsList.add(new Items(ButterKnifeDemo.class, "ButterKnife Demo"));
+        itemsList.add(new Items(YodaSpeak.class, "Yoda Speak"));
+        itemsList.add(new Items(GitHubApiWithVolley.class, "GitHub Api with Volley"));
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        notifyAdapter();
+        super.onViewCreated(view, savedInstanceState);
     }
 }

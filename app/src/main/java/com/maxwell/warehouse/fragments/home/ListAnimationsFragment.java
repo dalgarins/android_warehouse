@@ -20,23 +20,20 @@ import java.util.List;
 /**
  * Created by Maxwell on 02/10/2015.
  */
-public class ListAnimationsFragment extends Fragment {
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    {
-        Context context = container.getContext();
-        View v = LayoutInflater.from(context).inflate(R.layout.base_recycleview, container, false);
-        RecyclerView mRecyclerView = (RecyclerView) v.findViewById(R.id.customRecyclerView);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(container.getContext(), 1));
-        mRecyclerView.setHasFixedSize(false);
+public class ListAnimationsFragment extends ParentListFragment {
 
-        List<Items> itemsList = new ArrayList<>();
-
+    public ListAnimationsFragment() {
         itemsList.add(new Items(SimpleAnimation.class, "Simple Animation Demo"));
+    }
 
-        RVAdapter adapter = new RVAdapter(itemsList, getActivity());
-        mRecyclerView.setAdapter(adapter);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
 
-        return v;
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        notifyAdapter();
+        super.onViewCreated(view, savedInstanceState);
     }
 }
