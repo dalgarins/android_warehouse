@@ -1,7 +1,9 @@
 package com.maxwell.warehouse.activities.multimedia;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.database.Cursor;
 import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
 import android.net.Uri;
@@ -31,15 +33,18 @@ import java.util.Date;
 /**
  * Created by Maximiliano on 02/11/15.
  */
-public class VideoCaptureDemo extends AppCompatActivity implements View.OnClickListener{
+public class VideoCaptureDemo extends AppCompatActivity implements View.OnClickListener {
 
     public static final int MEDIA_TYPE_IMAGE = 1;
     public static final int MEDIA_TYPE_VIDEO = 2;
 
-    private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
-    private static final int CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE = 200;
+    private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 0;
+    private static final int CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE = 1;
+    private static final int VIDEO_GALLERY_ACTIVITY_REQUEST_CODE = 2;
+
     private Uri fileUri;
     private String lastVideoRecorded;
+    private String playingVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,15 +53,98 @@ public class VideoCaptureDemo extends AppCompatActivity implements View.OnClickL
 
         Button newVideoButton = (Button) findViewById(R.id.newVideoButton);
         Button playVideo = (Button) findViewById(R.id.playVideo);
+        Button chooseVideo = (Button) findViewById(R.id.chooseVideoButton);
 
         newVideoButton.setOnClickListener(this);
         playVideo.setOnClickListener(this);
+        chooseVideo.setOnClickListener(this);
+
     }
 
-    public void newVideo () {
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE) {
+                playingVideo = lastVideoRecorded;
+
+            } else if (requestCode == VIDEO_GALLERY_ACTIVITY_REQUEST_CODE) {
+                Uri selectedImage = data.getData();
+                String[] filePathColumn = { MediaStore.Images.Media.DATA };
+
+                Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                cursor.moveToFirst();
+
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                String picturePath = cursor.getString(columnIndex);
+                cursor.close();
+                playingVideo = picturePath;
+
+                playVideo();
+            }
+        }
+        else if (resultCode == RESULT_CANCELED) {
+            Toast.makeText(this, "Video has been canceled", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Error while recording video", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private static Uri getOutputMediaFileUri(int type){
+        return Uri.fromFile(getOutputMediaFile(type));
+    }
+
+    private static File getOutputMediaFile(int type){
+        // Para asegurarse que este montada la SDCard usar Environment.getExternalStorageState() antes...
+
+        File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory (Environment.DIRECTORY_PICTURES), "AndroidLib");
+        // Sirve para que se guarden en la carpeta publica mencionada.
+        // Se puede compartir el contenido con otras apps y persistira si la app es eliminada.
+
+        // Crear la carpeta si no existe
+        if (! mediaStorageDir.exists()){
+            if (! mediaStorageDir.mkdirs()){
+                Log.d("AndroidLib", "failed to create directory");
+                return null;
+            }
+        }
+
+        // Crear el path final del file
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        File mediaFile;
+        if (type == MEDIA_TYPE_IMAGE)
+            mediaFile = new File(mediaStorageDir.getPath() + File.separator + "IMG_"+ timeStamp + ".jpg");
+        else if (type == MEDIA_TYPE_VIDEO)
+            mediaFile = new File(mediaStorageDir.getPath() + File.separator + "VID_"+ timeStamp + ".mp4");
+        else
+            return null;
+
+        return mediaFile;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.newVideoButton:
+                newVideo();
+                break;
+            case R.id.playVideo:
+                if (playingVideo != null)
+                    playVideo();
+                else Toast.makeText(this, "Abrir o grabar video", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.chooseVideoButton:
+                chooseVideo();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void newVideo() {
 
         fileUri = getOutputMediaFileUri(MEDIA_TYPE_VIDEO);
-
         lastVideoRecorded = fileUri.toString();
 
         Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
@@ -67,11 +155,12 @@ public class VideoCaptureDemo extends AppCompatActivity implements View.OnClickL
         startActivityForResult(intent, CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE);
     }
 
-    public void playVideo(){
+    public void playVideo() {
+
         VideoView vd = (VideoView) findViewById(R.id.VideoView);
         vd.setVisibility(View.VISIBLE);
 
-        Uri uri = Uri.parse(lastVideoRecorded);
+        Uri uri = Uri.parse(playingVideo);
         MediaController mc = new MediaController(this);
         vd.setMediaController(mc);
         vd.requestFocus();
@@ -79,67 +168,23 @@ public class VideoCaptureDemo extends AppCompatActivity implements View.OnClickL
         vd.start();
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.newVideoButton:
-                newVideo();
-                break;
-            case R.id.playVideo:
-                playVideo();
-                break;
-        }
+    public void chooseVideo () {
+        Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(i, VIDEO_GALLERY_ACTIVITY_REQUEST_CODE);
+
+        //OPCION 1 , menu para elegir grabar o seleccionar
+
+        /*Intent pickIntent = new Intent();
+        pickIntent.setType("video/*");
+        pickIntent.setAction(Intent.ACTION_GET_CONTENT);
+
+        Intent takeVideoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        String pickTitle = "Select or take a new Video";
+        Intent chooserIntent = Intent.createChooser(pickIntent, pickTitle);
+        chooserIntent.putExtra (Intent.EXTRA_INITIAL_INTENTS, new Intent[] { takeVideoIntent, takePictureIntent });
+
+        startActivityForResult(chooserIntent, VIDEO_GALLERY_ACTIVITY_REQUEST_CODE); */
     }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        if (requestCode == CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE) {
-            if (resultCode == RESULT_OK) {
-                Toast.makeText(this, "Video saved to:\n" + lastVideoRecorded, Toast.LENGTH_LONG).show();
-            } else if (resultCode == RESULT_CANCELED) {
-                Toast.makeText(this, "Video has been canceled", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(this, "Error while recording video", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
-    private static Uri getOutputMediaFileUri(int type){
-        return Uri.fromFile(getOutputMediaFile(type));
-    }
-
-    private static File getOutputMediaFile(int type){
-        // To be safe, you should check that the SDCard is mounted
-        // using Environment.getExternalStorageState() before doing this.
-
-        File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_PICTURES), "MyCameraApp");
-        // This location works best if you want the created images to be shared
-        // between applications and persist after your app has been uninstalled.
-
-        // Create the storage directory if it does not exist
-        if (! mediaStorageDir.exists()){
-            if (! mediaStorageDir.mkdirs()){
-                Log.d("MyCameraApp", "failed to create directory");
-                return null;
-            }
-        }
-
-        // Create a media file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        File mediaFile;
-        if (type == MEDIA_TYPE_IMAGE){
-            mediaFile = new File(mediaStorageDir.getPath() + File.separator +
-                    "IMG_"+ timeStamp + ".jpg");
-        } else if(type == MEDIA_TYPE_VIDEO) {
-            mediaFile = new File(mediaStorageDir.getPath() + File.separator +
-                    "VID_"+ timeStamp + ".mp4");
-        } else {
-            return null;
-        }
-
-        return mediaFile;
-    }
-
 }
