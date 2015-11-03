@@ -5,13 +5,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.maxwell.warehouse.fragments.home.ListAnimationsFragment;
-import com.maxwell.warehouse.fragments.home.ListDevsFragment;
-import com.maxwell.warehouse.fragments.home.ListLocationFragment;
-import com.maxwell.warehouse.fragments.home.ListMultimediaFragment;
-import com.maxwell.warehouse.fragments.home.ListSocialFragment;
-import com.maxwell.warehouse.fragments.home.ListStorageFragment;
-import com.maxwell.warehouse.fragments.home.ListUIFragment;
 import com.maxwell.warehouse.fragments.home.ParentListFragment;
 
 import java.util.ArrayList;
@@ -20,8 +13,7 @@ import java.util.List;
 /**
  * Created by lbais on 25/06/2015.
  */
-public class HomeAdapter extends FragmentPagerAdapter
-{
+public class HomeAdapter extends FragmentPagerAdapter {
 
     private List<Fragment> mListPages;
 
@@ -40,16 +32,48 @@ public class HomeAdapter extends FragmentPagerAdapter
 
         mListPages = new ArrayList<>();
 
-        Bundle social = new Bundle();
-        //social.putParcelableArrayList();
+        for (int indice = 0; indice < 7; indice++) {
+            ParentListFragment socialFragment = new ParentListFragment();
+            Bundle socialBundle = new Bundle();
+            switch (indice) {
+                case 0:
+                    socialBundle.putString(ParentListFragment.TYPE, ParentListFragment.SOCIAL);
+                    break;
+                case 1:
+                    socialBundle.putString(ParentListFragment.TYPE, ParentListFragment.MULTIMEDIA);
+                    break;
+                case 2:
+                    socialBundle.putString(ParentListFragment.TYPE, ParentListFragment.DEVS);
+                    break;
+                case 3:
+                    socialBundle.putString(ParentListFragment.TYPE, ParentListFragment.UI);
+                    break;
+                case 4:
+                    socialBundle.putString(ParentListFragment.TYPE, ParentListFragment.ANIMATIONS);
+                    break;
+                case 5:
+                    socialBundle.putString(ParentListFragment.TYPE, ParentListFragment.LOC);
+                    break;
+                case 6:
+                    socialBundle.putString(ParentListFragment.TYPE, ParentListFragment.STORAGE);
+                    break;
+            }
 
-        mListPages.add(new ListSocialFragment());
-        mListPages.add(new ListMultimediaFragment());
-        mListPages.add(new ListDevsFragment());
-        mListPages.add(new ListUIFragment());
-        mListPages.add(new ListAnimationsFragment());
-        mListPages.add(new ListLocationFragment());
-        mListPages.add(new ListStorageFragment());
+            socialFragment.setArguments(socialBundle);
+            mListPages.add(socialFragment);
+        }
+//        mListPages.add(new ListMultimediaFragment());
+//
+//        ParentListFragment parentListFragment = new ParentListFragment();
+//        Bundle bundle = new Bundle();
+//        bundle.putString(ParentListFragment.TYPE, ParentListFragment.DEVS);
+//        parentListFragment.setArguments(bundle);
+//        mListPages.add(parentListFragment);
+//
+//        mListPages.add(new ListUIFragment());
+//        mListPages.add(new ListAnimationsFragment());
+//        mListPages.add(new ListLocationFragment());
+//        mListPages.add(new ListStorageFragment());
 
     }
 

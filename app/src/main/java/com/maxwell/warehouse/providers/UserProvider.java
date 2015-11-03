@@ -20,7 +20,7 @@ import java.util.HashMap;
  * Created by root on 16/10/15.
  */
 public class UserProvider extends ContentProvider {
-    public static final String PROVIDER_NAME = "com.maxwell.warehouse.content_providers.UserProvider";
+    public static final String PROVIDER_NAME = "com.maxwell.warehouse.providers.UserProvider";
     static final String URL = "content://" + PROVIDER_NAME + "/cte";
     public static final Uri CONTENT_URI = Uri.parse(URL);
     private SQLiteDatabase db;
