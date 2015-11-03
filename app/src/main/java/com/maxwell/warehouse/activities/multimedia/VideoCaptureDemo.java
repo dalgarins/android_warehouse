@@ -69,10 +69,6 @@ public class VideoCaptureDemo extends AppCompatActivity implements View.OnClickL
 
     public void playVideo(){
         VideoView vd = (VideoView) findViewById(R.id.VideoView);
-        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)vd.getLayoutParams();
-        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT, 0);
-        layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, 0);
-        vd.setLayoutParams(layoutParams);
         vd.setVisibility(View.VISIBLE);
 
         Uri uri = Uri.parse(lastVideoRecorded);
