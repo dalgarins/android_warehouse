@@ -5,13 +5,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.maxwell.warehouse.fragments.home.ListAnimationsFragment;
-import com.maxwell.warehouse.fragments.home.ListDevsFragment;
-import com.maxwell.warehouse.fragments.home.ListLocationFragment;
-import com.maxwell.warehouse.fragments.home.ListMultimediaFragment;
-import com.maxwell.warehouse.fragments.home.ListSocialFragment;
-import com.maxwell.warehouse.fragments.home.ListStorageFragment;
-import com.maxwell.warehouse.fragments.home.ListUIFragment;
 import com.maxwell.warehouse.fragments.home.ParentListFragment;
 
 import java.util.ArrayList;
