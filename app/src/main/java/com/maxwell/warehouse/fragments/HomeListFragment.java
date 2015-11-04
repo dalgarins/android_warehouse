@@ -1,9 +1,8 @@
-package com.maxwell.warehouse.fragments.home;
+package com.maxwell.warehouse.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -24,6 +23,7 @@ import com.maxwell.warehouse.activities.location.LocationListenerDemo;
 import com.maxwell.warehouse.activities.multimedia.AdvanceTTSAndSTT;
 import com.maxwell.warehouse.activities.multimedia.GlideDemo;
 import com.maxwell.warehouse.activities.multimedia.MediaPlayerStreaming;
+import com.maxwell.warehouse.activities.multimedia.ExoPlayerDemo;
 import com.maxwell.warehouse.activities.multimedia.STT;
 import com.maxwell.warehouse.activities.multimedia.TTS;
 import com.maxwell.warehouse.activities.multimedia.VideoCaptureDemo;
@@ -58,7 +58,7 @@ import java.util.List;
 /**
  * Created by Maximiliano on 02/11/15.
  */
-public class ParentListFragment extends Fragment {
+public class HomeListFragment extends Fragment {
     public static final String TYPE = "type";
     public static final String DEVS = "DEVS";
     public static final String SOCIAL = "SOCIAL";
@@ -143,6 +143,7 @@ public class ParentListFragment extends Fragment {
             multimediaitemsList.add(new Items(AdvanceTTSAndSTT.class, "Advance TTS & STT Example"));
             multimediaitemsList.add(new Items(VideoCaptureDemo.class, "Video Capture Demo"));
             multimediaitemsList.add(new Items(VideoStreamingDemo.class, "Video Streaming Demo"));
+            multimediaitemsList.add(new Items(ExoPlayerDemo.class, "ExoPlayer Demo"));
             hashMap.put(MULTIMEDIA, multimediaitemsList);
         }
 

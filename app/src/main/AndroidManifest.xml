@@ -231,6 +231,7 @@
         <activity android:name=".activities.multimedia.VideoCaptureDemo"></activity>
         <activity android:name=".activities.storage.FileExplorerDemo"></activity>
         <activity android:name=".activities.multimedia.VideoStreamingDemo"></activity>
+        <activity android:name=".activities.multimedia.ExoPlayerDemo"></activity>
 
         <!-- FACEBOOK BEGIN -->
         <activity

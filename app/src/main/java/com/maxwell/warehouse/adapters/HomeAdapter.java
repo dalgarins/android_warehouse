@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.maxwell.warehouse.fragments.home.ParentListFragment;
+import com.maxwell.warehouse.fragments.HomeListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,48 +33,35 @@ public class HomeAdapter extends FragmentPagerAdapter {
         mListPages = new ArrayList<>();
 
         for (int indice = 0; indice < 7; indice++) {
-            ParentListFragment socialFragment = new ParentListFragment();
+            HomeListFragment socialFragment = new HomeListFragment();
             Bundle socialBundle = new Bundle();
             switch (indice) {
                 case 0:
-                    socialBundle.putString(ParentListFragment.TYPE, ParentListFragment.SOCIAL);
+                    socialBundle.putString(HomeListFragment.TYPE, HomeListFragment.SOCIAL);
                     break;
                 case 1:
-                    socialBundle.putString(ParentListFragment.TYPE, ParentListFragment.MULTIMEDIA);
+                    socialBundle.putString(HomeListFragment.TYPE, HomeListFragment.MULTIMEDIA);
                     break;
                 case 2:
-                    socialBundle.putString(ParentListFragment.TYPE, ParentListFragment.DEVS);
+                    socialBundle.putString(HomeListFragment.TYPE, HomeListFragment.DEVS);
                     break;
                 case 3:
-                    socialBundle.putString(ParentListFragment.TYPE, ParentListFragment.UI);
+                    socialBundle.putString(HomeListFragment.TYPE, HomeListFragment.UI);
                     break;
                 case 4:
-                    socialBundle.putString(ParentListFragment.TYPE, ParentListFragment.ANIMATIONS);
+                    socialBundle.putString(HomeListFragment.TYPE, HomeListFragment.ANIMATIONS);
                     break;
                 case 5:
-                    socialBundle.putString(ParentListFragment.TYPE, ParentListFragment.LOC);
+                    socialBundle.putString(HomeListFragment.TYPE, HomeListFragment.LOC);
                     break;
                 case 6:
-                    socialBundle.putString(ParentListFragment.TYPE, ParentListFragment.STORAGE);
+                    socialBundle.putString(HomeListFragment.TYPE, HomeListFragment.STORAGE);
                     break;
             }
 
             socialFragment.setArguments(socialBundle);
             mListPages.add(socialFragment);
         }
-//        mListPages.add(new ListMultimediaFragment());
-//
-//        ParentListFragment parentListFragment = new ParentListFragment();
-//        Bundle bundle = new Bundle();
-//        bundle.putString(ParentListFragment.TYPE, ParentListFragment.DEVS);
-//        parentListFragment.setArguments(bundle);
-//        mListPages.add(parentListFragment);
-//
-//        mListPages.add(new ListUIFragment());
-//        mListPages.add(new ListAnimationsFragment());
-//        mListPages.add(new ListLocationFragment());
-//        mListPages.add(new ListStorageFragment());
-
     }
 
     @Override

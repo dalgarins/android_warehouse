@@ -47,4 +47,6 @@ dependencies {
     compile 'com.android.support:cardview-v7:+'
     //libreria de soporte para drawerLayout y Floating Action Button
     compile 'com.android.support:design:+'
+    //libreria para streaming
+    compile 'com.google.android.exoplayer:exoplayer:r1.5.2'
 }
