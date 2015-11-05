@@ -19,7 +19,7 @@ public class VideoStreamingDemo extends AppCompatActivity implements SurfaceHold
     MediaPlayer mediaPlayer;
     SurfaceHolder surfaceHolder;
     SurfaceView playerSurfaceView;
-    String videoSrc = Constants.URL_VIDEO_PLAYLIST;
+    String videoSrc = Constants.URL_VIDEO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
