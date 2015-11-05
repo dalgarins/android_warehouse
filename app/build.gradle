@@ -11,6 +11,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -49,4 +50,6 @@ dependencies {
     compile 'com.android.support:design:+'
     //libreria para streaming
     compile 'com.google.android.exoplayer:exoplayer:r1.5.2'
+    //multidex
+    compile 'com.android.support:multidex:1.0.0'
 }

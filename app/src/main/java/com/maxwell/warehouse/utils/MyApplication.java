@@ -1,6 +1,8 @@
 package com.maxwell.warehouse.utils;
 
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.maxwell.warehouse.R;
 import com.maxwell.warehouse.models.ViewHolderModel;
@@ -16,6 +18,12 @@ import java.util.Map;
  */
 public class MyApplication extends Application {
     Map<Enum, ViewHolderModel> viewHolders = new HashMap<>();
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 
     @Override
     public void onCreate() {
