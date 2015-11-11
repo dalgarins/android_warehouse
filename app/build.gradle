@@ -52,4 +52,8 @@ dependencies {
     compile 'com.google.android.exoplayer:exoplayer:r1.5.2'
     //multidex
     compile 'com.android.support:multidex:1.0.0'
+    //auth0
+    compile 'com.auth0.android:lock:1.9.+'
+    compile 'com.auth0.android:lock-facebook:2.0.+'
+    compile 'com.auth0.android:lock-googleplus:2.0.+'
 }

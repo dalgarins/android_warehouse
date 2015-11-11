@@ -31,6 +31,7 @@ import com.maxwell.warehouse.activities.multimedia.VideoStreamingDemo;
 import com.maxwell.warehouse.activities.multimedia.ZoomInZoomOut;
 import com.maxwell.warehouse.activities.social.FacebookLogin;
 import com.maxwell.warehouse.activities.social.FacebookShare;
+import com.maxwell.warehouse.activities.social.LockActivityOAuth;
 import com.maxwell.warehouse.activities.social.SharingDemo;
 import com.maxwell.warehouse.activities.storage.FileExplorerDemo;
 import com.maxwell.warehouse.activities.storage.PrefsDemo;
@@ -167,6 +168,7 @@ public class HomeListFragment extends Fragment {
             socialitemsList.add(new Items(FacebookLogin.class, "Facebook Login"));
             socialitemsList.add(new Items(FacebookShare.class, "Facebook Share"));
             socialitemsList.add(new Items(SharingDemo.class, "Sharing Demo"));
+            socialitemsList.add(new Items(LockActivityOAuth.class, "LockActivity OAuth Demo"));
             hashMap.put(SOCIAL, socialitemsList);
         }
 
