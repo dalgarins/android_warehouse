@@ -21,14 +21,23 @@
 
 
         <activity android:name=".activities.multimedia.MediaPlayerStreaming" />
-        <activity android:name=".activities.social.FacebookLogin"/>
-        <activity android:name=".activities.social.FacebookShare"/>
         <activity android:name=".activities.multimedia.GlideDemo"/>
         <activity android:name=".activities.multimedia.ZoomInZoomOut"/>
         <activity android:name=".activities.multimedia.TTS"/>
         <activity android:name=".activities.multimedia.STT"/>
         <activity android:name=".activities.multimedia.AdvanceTTSAndSTT"/>
+        <activity android:name=".activities.multimedia.VideoCaptureDemo"></activity>
+        <activity android:name=".activities.multimedia.VideoStreamingDemo"></activity>
+        <activity android:name=".activities.multimedia.ExoPlayerDemo"></activity>
+
+        <activity android:name=".activities.social.FacebookLogin"/>
+        <activity android:name=".activities.social.FacebookShare"/>
+        <activity android:name=".activities.social.SharingDemo"/>
+        <activity android:name=".activities.social.LockActivityOAuth"></activity>
+
         <activity android:name=".activities.devs.ButterKnifeDemo"/>
+        <activity android:name=".activities.devs.GitHubApiWithVolley"></activity>
+
         <activity android:name=".activities.user_interface.ParallaxDemo"/>
         <activity android:name=".activities.user_interface.DrawerLayoutDemo" />
         <activity android:name=".activities.user_interface.ParallaxWithCardView"/>
@@ -37,26 +46,22 @@
         <activity android:name=".activities.user_interface.NewsFragment"/>
         <activity android:name=".activities.user_interface.FontManagerDemo"/>
         <activity android:name=".activities.user_interface.TabsDemo"/>
-
         <activity android:name=".activities.user_interface.ScrollBarDemo" />
-        <activity android:name=".activities.storage.PrefsDemo"/>
-        <activity android:name=".activities.storage.SaveFileDemo"/>
         <activity android:name=".activities.user_interface.UITesting"/>
         <activity android:name=".activities.user_interface.RecycleWithFactory"/>
-        <activity android:name=".activities.animations.SimpleAnimation"/>
         <activity android:name=".activities.user_interface.DialogDemo"/>
-        <activity android:name=".activities.social.SharingDemo"/>
+        <activity android:name=".activities.user_interface.UserList"></activity>
+
+        <activity android:name=".activities.storage.PrefsDemo"/>
+        <activity android:name=".activities.storage.SaveFileDemo"/>
+        <activity android:name=".activities.storage.SQLiteDemo"></activity>
+        <activity android:name=".activities.storage.FileExplorerDemo"></activity>
+
+        <activity android:name=".activities.animations.SimpleAnimation"/>
 
         <activity android:name=".activities.location.LocationDemo"></activity>
         <activity android:name=".activities.location.LocationListenerDemo"></activity>
-        <activity android:name=".activities.storage.SQLiteDemo"></activity>
-        <activity android:name=".activities.user_interface.UserList"></activity>
-        <activity android:name=".activities.devs.GitHubApiWithVolley"></activity>
-        <activity android:name=".activities.multimedia.VideoCaptureDemo"></activity>
-        <activity android:name=".activities.storage.FileExplorerDemo"></activity>
-        <activity android:name=".activities.multimedia.VideoStreamingDemo"></activity>
-        <activity android:name=".activities.multimedia.ExoPlayerDemo"></activity>
-        <activity android:name=".activities.social.LockActivityOAuth"></activity>
+
 
         <!--Auth0 Lock-->
         <activity

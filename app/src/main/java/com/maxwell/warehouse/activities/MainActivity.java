@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.maxwell.warehouse.R;
@@ -22,6 +23,7 @@ import com.maxwell.warehouse.fragments.HomeListFragment;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     RelativeLayout containerFragments;
+    ImageView ivFenix;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity
 
         //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         containerFragments = (RelativeLayout) findViewById(R.id.containerFragments);
+        ivFenix = (ImageView) findViewById(R.id.ivFenix);
         containerFragments.setId(R.id.containerFragments);
 
         /*fab.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +92,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        ivFenix.setVisibility(View.GONE);
         FragmentManager fm = getSupportFragmentManager();
         HomeListFragment socialFragment = new HomeListFragment();
         Bundle socialBundle = new Bundle();
