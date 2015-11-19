@@ -36,6 +36,7 @@
         <activity android:name=".activities.user_interface.ActionBarDemo"/>
         <activity android:name=".activities.user_interface.NewsFragment"/>
         <activity android:name=".activities.user_interface.FontManagerDemo"/>
+        <activity android:name=".activities.user_interface.TabsDemo"/>
 
         <activity android:name=".activities.user_interface.ScrollBarDemo" />
         <activity android:name=".activities.storage.PrefsDemo"/>

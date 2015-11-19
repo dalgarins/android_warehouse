@@ -43,6 +43,7 @@ import com.maxwell.warehouse.activities.user_interface.ParallaxWithCardView;
 import com.maxwell.warehouse.activities.user_interface.RecycleWithFactory;
 import com.maxwell.warehouse.activities.user_interface.ScrollBarDemo;
 import com.maxwell.warehouse.activities.user_interface.SnackbarDemo;
+import com.maxwell.warehouse.activities.user_interface.TabsDemo;
 import com.maxwell.warehouse.activities.user_interface.UITesting;
 import com.maxwell.warehouse.activities.user_interface.UserList;
 import com.maxwell.warehouse.adapters.RVAdapter;
@@ -118,6 +119,7 @@ public class HomeListFragment extends Fragment {
             uiitemsList.add(new Items(FontManagerDemo.class, "Font Manager Demo"));
             uiitemsList.add(new Items(ScrollBarDemo.class, "ScrollBar Demo"));
             uiitemsList.add(new Items(UserList.class, "User Content Provider Custom"));
+            uiitemsList.add(new Items(TabsDemo.class, "Tabs Demo"));
             hashMap.put(UI, uiitemsList);
         }
 
