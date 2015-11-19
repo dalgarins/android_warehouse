@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_anim" android:icon="@android:drawable/ic_menu_slideshow"
+            android:title="Animations" />
+        <item android:id="@+id/nav_dev" android:icon="@android:drawable/ic_menu_manage"
+            android:title="Devs" />
+        <item android:id="@+id/nav_location" android:icon="@android:drawable/ic_menu_directions"
+            android:title="Location" />
+        <item android:id="@+id/nav_multimedia" android:icon="@android:drawable/ic_menu_gallery"
+            android:title="Multimedia" />
+        <item android:id="@+id/nav_social" android:icon="@android:drawable/ic_menu_share"
+            android:title="Social" />
+        <item android:id="@+id/nav_storage" android:icon="@android:drawable/ic_menu_send"
+            android:title="Storage" />
+        <item android:id="@+id/nav_ui" android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="User Interface" />
+    </group>
+
+</menu>
