@@ -5,4 +5,54 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="facebook_app_id">492944210879985</string>
+    <string name="drawer_open">Open Drawer</string>
+    <string name="drawer_close">Close Drawer</string>
+    <string name="title_activity_google_maps_demo">Map</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est. Aliquam commodo bibendum accumsan.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie dolor est.
+        Donec dapibus lorem justo, id tempor mauris tincidunt eget. Donec viverra aliquam mauris, sed efficitur metus ultrices quis.
+        Morbi quis hendrerit dui, ac varius sem. Donec congue aliquet luctus. Nulla laoreet, nulla in semper condimentum, felis ligula molestie quam, ac mollis ex augue a libero.
+        Donec imperdiet porttitor ultricies. Etiam suscipit orci eu elit auctor, eu euismod lectus dictum. Donec at augue euismod ligula blandit faucibus.
+        Fusce vel lacus porttitor, porta ligula ac, vehicula ipsum. Cras id eros leo.</string>
+
+    <string-array name="frases">
+        <item>La posibilidad de realizar un sueño es lo que hace que la vida sea interesante.</item>
+        <item>Nunca desistas de un sueño. Sólo trata de ver las señales que te lleven a él.</item>
+        <item>La memoria es como el mal amigo; cuando más falta te hace, te falla.</item>
+        <item>La verdad se corrompe tanto con la mentira como con el silencio.</item>
+        <item>Cuando alguien desea algo debe saber que corre riesgos y por eso la vida vale la pena.</item>
+        <item>Si has construido castillos en el aire, tu trabajo no se pierde; ahora coloca las bases debajo de ellos.</item>
+        <item>Todo lo que somos es el resultado de lo que hemos pensado; está fundado en nuestros pensamientos y está hecho de nuestros pensamientos.</item>
+        <item>El que busca la verdad corre el riesgo de encontrarla.</item>
+        <item>No basta decir solamente la verdad, mas conviene mostrar la causa de la falsedad.</item>
+        <item>Como todos los soñadores, confundí el desencanto con la verdad.</item>
+        <item>El que dice una mentira no sabe qué tarea ha asumido, porque estará obligado a inventar veinte más para sostener la certeza de esta primera.</item>
+        <item>No pretendas que las cosas ocurran como tu quieres. Desea, más bien, que se produzcan tal como se producen, y serás feliz.</item>
+        <item>Importa mucho más lo que tú piensas de ti mismo que lo que los otros opinen de ti.</item>
+        <item>¡Qué poco cuesta construir castillos en el aire y qué cara es su destrucción!</item>
+    </string-array>
+
+    <string-array name="imagenes">
+        <item>http://www.definicionabc.com/wp-content/uploads/Paisaje-Natural.jpg</item>
+        <item>http://www.arqhys.com/wp-content/fotos/2012/05/paisajes-naturales-cascadas.jpg</item>
+        <item>http://i.ytimg.com/vi/KhcTYg0NJlg/hqdefault.jpg</item>
+        <item>https://pbs.twimg.com/profile_images/3782021553/cac4240510b984cb0c3ed7a90bc961a5_400x400.jpeg</item>
+        <item>http://i.ytimg.com/vi/fJF6bo56TrE/hqdefault.jpg</item>
+        <item>https://vdmuriel9.files.wordpress.com/2011/08/img-1.jpg</item>
+    </string-array>
+
+    <string name="lbl_you_are_at">YOU ARE AT</string>
+    <string name="btn_get_location">GET MY LOCATION</string>
+    <string name="btn_start_location_updates">START LOCATION UPDATES</string>
+    <string name="btn_stop_location_updates">STOP LOCATION UPDATES</string>
 </resources>
