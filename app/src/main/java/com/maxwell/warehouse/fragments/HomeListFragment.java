@@ -124,32 +124,26 @@ public class HomeListFragment extends Fragment {
 
                 for (ActivityInfo item:mActivities) {
                     String packageName = fragmentActivity.getPackageName() + ".activities";
+                    Class cl = Class.forName(item.name);
                     if(item.name.contains(packageName + ".animations")){
-                        Class cl = Class.forName(item.name);
                         String className = item.name.replace(packageName + ".animations.", "");
                         animitemsList.add(new Items(cl, className));
                     } else if(item.name.contains(packageName + ".devs")){
-                        Class cl = Class.forName(item.name);
                         String className = item.name.replace(packageName + ".devs.", "");
                         devsitemsList.add(new Items(cl, className));
                     }else if(item.name.contains(packageName + ".location")){
-                        Class cl = Class.forName(item.name);
                         String className = item.name.replace(packageName + ".location.", "");
                         locitemsList.add(new Items(cl, className));
                     }else if(item.name.contains(packageName + ".multimedia")){
-                        Class cl = Class.forName(item.name);
                         String className = item.name.replace(packageName + ".multimedia.", "");
                         multimediaitemsList.add(new Items(cl, className));
                     }else if(item.name.contains(packageName + ".social")){
-                        Class cl = Class.forName(item.name);
                         String className = item.name.replace(packageName + ".social.", "");
                         socialitemsList.add(new Items(cl, className));
                     }else if(item.name.contains(packageName + ".storage")){
-                        Class cl = Class.forName(item.name);
                         String className = item.name.replace(packageName + ".storage.", "");
                         storageitemsList.add(new Items(cl, className));
                     }else if(item.name.contains(packageName + ".user_interface")){
-                        Class cl = Class.forName(item.name);
                         String className = item.name.replace(packageName + ".user_interface.", "");
                         uiitemsList.add(new Items(cl, className));
                     }
