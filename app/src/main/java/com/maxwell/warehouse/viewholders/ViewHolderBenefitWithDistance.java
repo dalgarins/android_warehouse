@@ -20,7 +20,7 @@ public class ViewHolderBenefitWithDistance extends ViewHolderParent {
         super(itemView);
 
         brandName = (TextView)itemView.findViewById(R.id.brandName);
-        distance = (TextView) itemView.findViewById(R.id.distance);
+        //distance = (TextView) itemView.findViewById(R.id.distance);
         benefitDescription = (TextView) itemView.findViewById(R.id.benefitDescription);
         benefitPhoto = (ImageView) itemView.findViewById(R.id.benefitPhoto);
         benefitByCardText = (TextView) itemView.findViewById(R.id.benefitBasicCardText);
@@ -30,7 +30,7 @@ public class ViewHolderBenefitWithDistance extends ViewHolderParent {
     public void populate(Information information) {
         final Beneficio beneficio = (Beneficio) information;
 
-        brandName.setText(beneficio.getBrandName());
+        //brandName.setText(beneficio.getBrandName());
         benefitDescription.setText(beneficio.getBenefitText());
 
         if(beneficio.getBenefitPhoto()!=null && !beneficio.getBenefitPhoto().isEmpty())
