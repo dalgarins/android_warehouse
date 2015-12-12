@@ -31,7 +31,7 @@ public class ViewHolderBenefitWithDistance extends ViewHolderParent {
         final Beneficio beneficio = (Beneficio) information;
 
         //brandName.setText(beneficio.getBrandName());
-        benefitDescription.setText(beneficio.getBenefitText());
+        //benefitDescription.setText(beneficio.getBenefitText());
 
         if(beneficio.getBenefitPhoto()!=null && !beneficio.getBenefitPhoto().isEmpty())
             Glide.with(context).load(beneficio.getBenefitPhoto()).placeholder(R.drawable.fenix).into(benefitPhoto);
