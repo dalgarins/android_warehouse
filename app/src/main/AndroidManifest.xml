@@ -51,7 +51,7 @@
         <activity android:name=".activities.user_interface.RecycleWithFactory"/>
         <activity android:name=".activities.user_interface.DialogDemo"/>
         <activity android:name=".activities.user_interface.UserList"/>
-        <activity android:name=".activities.user_interface.ShapesDemo"/>
+        <activity android:name=".activities.multimedia.ShapesDemo"/>
 
         <activity android:name=".activities.storage.PrefsDemo"/>
         <activity android:name=".activities.storage.SaveFileDemo"/>

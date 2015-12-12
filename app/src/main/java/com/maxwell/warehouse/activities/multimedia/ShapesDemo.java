@@ -1,4 +1,4 @@
-package com.maxwell.warehouse.activities.user_interface;
+package com.maxwell.warehouse.activities.multimedia;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
