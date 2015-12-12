@@ -1,6 +1,5 @@
 package com.maxwell.warehouse.fragments;
 
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
@@ -16,43 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.maxwell.warehouse.R;
-import com.maxwell.warehouse.activities.animations.SimpleAnimation;
-import com.maxwell.warehouse.activities.devs.ButterKnifeDemo;
-import com.maxwell.warehouse.activities.devs.GitHubApiWithVolley;
-import com.maxwell.warehouse.activities.location.GoogleMapsDemo;
-import com.maxwell.warehouse.activities.location.LocationDemo;
-import com.maxwell.warehouse.activities.location.LocationListenerDemo;
-import com.maxwell.warehouse.activities.multimedia.AdvanceTTSAndSTT;
-import com.maxwell.warehouse.activities.multimedia.ExoPlayerDemo;
-import com.maxwell.warehouse.activities.multimedia.GlideDemo;
-import com.maxwell.warehouse.activities.multimedia.MediaPlayerStreaming;
-import com.maxwell.warehouse.activities.multimedia.STT;
-import com.maxwell.warehouse.activities.multimedia.TTS;
-import com.maxwell.warehouse.activities.multimedia.VideoCaptureDemo;
-import com.maxwell.warehouse.activities.multimedia.VideoStreamingDemo;
-import com.maxwell.warehouse.activities.multimedia.ZoomInZoomOut;
-import com.maxwell.warehouse.activities.social.FacebookLogin;
-import com.maxwell.warehouse.activities.social.FacebookShare;
-import com.maxwell.warehouse.activities.social.LockActivityOAuth;
-import com.maxwell.warehouse.activities.social.SharingDemo;
-import com.maxwell.warehouse.activities.storage.FileExplorerDemo;
-import com.maxwell.warehouse.activities.storage.PrefsDemo;
-import com.maxwell.warehouse.activities.storage.SQLiteDemo;
-import com.maxwell.warehouse.activities.storage.SaveFileDemo;
-import com.maxwell.warehouse.activities.user_interface.ActionBarDemo;
-import com.maxwell.warehouse.activities.user_interface.DialogDemo;
-import com.maxwell.warehouse.activities.user_interface.DrawerLayoutDemo;
-import com.maxwell.warehouse.activities.user_interface.FontManagerDemo;
-import com.maxwell.warehouse.activities.user_interface.NewsFragment;
-import com.maxwell.warehouse.activities.user_interface.ParallaxDemo;
-import com.maxwell.warehouse.activities.user_interface.ParallaxWithCardView;
-import com.maxwell.warehouse.activities.user_interface.RecycleWithFactory;
-import com.maxwell.warehouse.activities.user_interface.ScrollBarDemo;
-import com.maxwell.warehouse.activities.multimedia.ShapesDemo;
-import com.maxwell.warehouse.activities.user_interface.SnackbarDemo;
-import com.maxwell.warehouse.activities.user_interface.TabsDemo;
-import com.maxwell.warehouse.activities.user_interface.UITesting;
-import com.maxwell.warehouse.activities.user_interface.UserList;
 import com.maxwell.warehouse.adapters.RVAdapter;
 import com.maxwell.warehouse.models.Items;
 import com.maxwell.warehouse.utils.Constants;
@@ -75,7 +37,6 @@ public class HomeListFragment extends Fragment {
     public static final String LOC = "LOC";
     public static final String STORAGE = "STORAGE";
 
-    protected List<Items> itemsList = new ArrayList<>();
     private RVAdapter adapter;
     private static FragmentActivity fragmentActivity;
     private static ArrayList<ActivityInfo> mActivities;
@@ -99,10 +60,6 @@ public class HomeListFragment extends Fragment {
         mRecyclerView.setAdapter(adapter);
 
         return v;
-    }
-
-    public void notifyAdapter() {
-        adapter.notifyDataSetChanged();
     }
 
         private HashMap<String, List<Items>> hashMap = new HashMap<>();
