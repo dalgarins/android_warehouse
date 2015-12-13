@@ -20,6 +20,19 @@
                 android:resource="@layout/widget_provider" />
         </receiver>
 
+        <receiver
+            android:label="NON-STOP NYAN CAT! - By Android Warehouse"
+            android:icon="@drawable/nyancat"
+            android:name=".widgets.NyanCatWidget" >
+            <intent-filter >
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@layout/widget_provider_nyancat" />
+        </receiver>
+
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
