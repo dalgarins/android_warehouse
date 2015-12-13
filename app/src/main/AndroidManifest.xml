@@ -26,17 +26,17 @@
         <activity android:name=".activities.multimedia.TTS"/>
         <activity android:name=".activities.multimedia.STT"/>
         <activity android:name=".activities.multimedia.AdvanceTTSAndSTT"/>
-        <activity android:name=".activities.multimedia.VideoCaptureDemo"></activity>
-        <activity android:name=".activities.multimedia.VideoStreamingDemo"></activity>
-        <activity android:name=".activities.multimedia.ExoPlayerDemo"></activity>
+        <activity android:name=".activities.multimedia.VideoCaptureDemo"/>
+        <activity android:name=".activities.multimedia.VideoStreamingDemo"/>
+        <activity android:name=".activities.multimedia.ExoPlayerDemo"/>
 
         <activity android:name=".activities.social.FacebookLogin"/>
         <activity android:name=".activities.social.FacebookShare"/>
         <activity android:name=".activities.social.SharingDemo"/>
-        <activity android:name=".activities.social.LockActivityOAuth"></activity>
+        <activity android:name=".activities.social.LockActivityOAuth"/>
 
         <activity android:name=".activities.devs.ButterKnifeDemo"/>
-        <activity android:name=".activities.devs.GitHubApiWithVolley"></activity>
+        <activity android:name=".activities.devs.GitHubApiWithVolley"/>
 
         <activity android:name=".activities.user_interface.ParallaxDemo"/>
         <activity android:name=".activities.user_interface.DrawerLayoutDemo" />
@@ -55,13 +55,14 @@
 
         <activity android:name=".activities.storage.PrefsDemo"/>
         <activity android:name=".activities.storage.SaveFileDemo"/>
-        <activity android:name=".activities.storage.SQLiteDemo"></activity>
-        <activity android:name=".activities.storage.FileExplorerDemo"></activity>
+        <activity android:name=".activities.storage.SQLiteDemo"/>
+        <activity android:name=".activities.storage.FileExplorerDemo"/>
 
         <activity android:name=".activities.animations.SimpleAnimation"/>
+        <activity android:name=".activities.animations.MultipleAnimations"/>
 
-        <activity android:name=".activities.location.LocationDemo"></activity>
-        <activity android:name=".activities.location.LocationListenerDemo"></activity>
+        <activity android:name=".activities.location.LocationDemo"/>
+        <activity android:name=".activities.location.LocationListenerDemo"/>
 
 
         <!--Auth0 Lock-->
