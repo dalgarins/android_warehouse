@@ -12,6 +12,7 @@ public class Constants {
     public static final String KEY_NAME = "NAME";
     public static final String KEY_AGE = "AGE";
     public static final String KEY_PREFS = "PREFS";
+    public static final String KEY_TOOL = "TOOL";
 
     public static final String DEBUG = "debug_warehouse";
 
