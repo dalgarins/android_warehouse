@@ -8,6 +8,7 @@ public class Constants {
     public static final String API_GITHUB = "https://api.github.com";
     public static final String API_GOOGLE_MAPS = "https://maps.googleapis.com";
     public static final String API_YODA_SPEAK = "https://yoda.p.mashape.com";
+    public static final String API_STACK_OVERFLOW = "https://api.stackexchange.com";
 
     public static final String KEY_NAME = "NAME";
     public static final String KEY_AGE = "AGE";

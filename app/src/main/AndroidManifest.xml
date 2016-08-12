@@ -62,6 +62,7 @@
 
         <activity android:name=".activities.devs.ButterKnifeDemo"/>
         <activity android:name=".activities.devs.GitHubApiWithVolley"/>
+        <activity android:name=".activities.devs.StackOverflowAPIRetrofitDemo"/>
 
         <activity android:name=".activities.user_interface.ParallaxDemo"/>
         <activity android:name=".activities.user_interface.DrawerLayoutDemo" />
