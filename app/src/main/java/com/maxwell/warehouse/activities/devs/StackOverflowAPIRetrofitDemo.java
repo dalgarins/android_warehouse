@@ -55,7 +55,7 @@ public class StackOverflowAPIRetrofitDemo extends ListActivity implements Callba
 
         StackOverflowAPI stackOverflowAPI = retrofit.create(StackOverflowAPI.class);
 
-        Call<StackOverflowQuestions> call = stackOverflowAPI.loadQuestions("android");
+            Call<StackOverflowQuestions> call = stackOverflowAPI.loadQuestions("android");
 
         call.enqueue(this);
 

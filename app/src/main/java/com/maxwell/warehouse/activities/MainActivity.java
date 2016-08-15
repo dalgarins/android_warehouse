@@ -93,32 +93,32 @@ public class MainActivity extends AppCompatActivity
         ivFenix.setVisibility(View.GONE);
         FragmentManager fm = getSupportFragmentManager();
         HomeListFragment socialFragment = new HomeListFragment();
-        Bundle socialBundle = new Bundle();
+        Bundle genericBundle = new Bundle();
         switch (id){
             case R.id.nav_anim:
-                socialBundle.putString(HomeListFragment.TYPE, HomeListFragment.ANIMATIONS);
+                genericBundle.putString(HomeListFragment.TYPE, HomeListFragment.ANIMATIONS);
                 break;
             case R.id.nav_dev:
-                socialBundle.putString(HomeListFragment.TYPE, HomeListFragment.DEVS);
+                genericBundle.putString(HomeListFragment.TYPE, HomeListFragment.DEVS);
                 break;
             case R.id.nav_location:
-                socialBundle.putString(HomeListFragment.TYPE, HomeListFragment.LOC);
+                genericBundle.putString(HomeListFragment.TYPE, HomeListFragment.LOC);
                 break;
             case R.id.nav_multimedia:
-                socialBundle.putString(HomeListFragment.TYPE, HomeListFragment.MULTIMEDIA);
+                genericBundle.putString(HomeListFragment.TYPE, HomeListFragment.MULTIMEDIA);
                 break;
             case R.id.nav_social:
-                socialBundle.putString(HomeListFragment.TYPE, HomeListFragment.SOCIAL);
+                genericBundle.putString(HomeListFragment.TYPE, HomeListFragment.SOCIAL);
                 break;
             case R.id.nav_storage:
-                socialBundle.putString(HomeListFragment.TYPE, HomeListFragment.STORAGE);
+                genericBundle.putString(HomeListFragment.TYPE, HomeListFragment.STORAGE);
                 break;
             case R.id.nav_ui:
-                socialBundle.putString(HomeListFragment.TYPE, HomeListFragment.UI);
+                genericBundle.putString(HomeListFragment.TYPE, HomeListFragment.UI);
                 break;
         }
 
-        socialFragment.setArguments(socialBundle);
+        socialFragment.setArguments(genericBundle);
 
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(containerFragments.getId(), socialFragment);
