@@ -10,12 +10,11 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.maxwell.warehouse.R;
 import com.maxwell.warehouse.interfaces.StackOverflowAPI;
-import com.maxwell.warehouse.models.Question;
-import com.maxwell.warehouse.models.StackOverflowQuestions;
+import com.maxwell.warehouse.models.stackoverflow.Items;
+import com.maxwell.warehouse.models.stackoverflow.Question;
 import com.maxwell.warehouse.utils.Constants;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,7 +25,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by Maxwell on 12/08/2016.
  */
-public class StackOverflowAPIRetrofitDemo extends ListActivity implements Callback<StackOverflowQuestions> {
+public class StackOverflowAPIRetrofitDemo extends ListActivity implements Callback<Items<Question>> {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,22 +54,22 @@ public class StackOverflowAPIRetrofitDemo extends ListActivity implements Callba
 
         StackOverflowAPI stackOverflowAPI = retrofit.create(StackOverflowAPI.class);
 
-            Call<StackOverflowQuestions> call = stackOverflowAPI.loadQuestions("android");
+            Call<Items<Question>> call = stackOverflowAPI.loadQuestionsByTag("android", "activity");
 
         call.enqueue(this);
 
     }
 
     @Override
-    public void onResponse(Call<StackOverflowQuestions> call, Response<StackOverflowQuestions> response) {
+    public void onResponse(Call<Items<Question>> call, Response<Items<Question>> response) {
         setProgressBarIndeterminateVisibility(false);
         ArrayAdapter<Question> adapter = (ArrayAdapter<Question>) getListAdapter();
         adapter.clear();
-        adapter.addAll(response.body().items);
+        adapter.addAll(response.body().getItems());
     }
 
     @Override
-    public void onFailure(Call<StackOverflowQuestions> call, Throwable t) {
+    public void onFailure(Call<Items<Question>> call, Throwable t) {
         Toast.makeText(StackOverflowAPIRetrofitDemo.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
     }
 }
