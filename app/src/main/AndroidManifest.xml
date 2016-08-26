@@ -58,7 +58,6 @@
         <activity android:name=".activities.social.FacebookLogin"/>
         <activity android:name=".activities.social.FacebookShare"/>
         <activity android:name=".activities.social.SharingDemo"/>
-        <activity android:name=".activities.social.LockActivityOAuth"/>
 
         <activity android:name=".activities.devs.ButterKnifeDemo"/>
         <activity android:name=".activities.devs.GitHubApiWithVolley"/>
@@ -89,24 +88,6 @@
 
         <activity android:name=".activities.location.LocationDemo"/>
         <activity android:name=".activities.location.LocationListenerDemo"/>
-
-
-        <!--Auth0 Lock-->
-        <activity
-            android:name="com.auth0.lock.LockActivity"
-            android:theme="@style/Lock.Theme"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="a0iKdVaM8y9IKawbZiVFkEzUs2Lft39Svn" android:host="maxwell.auth0.com"/>
-            </intent-filter>
-        </activity>
-        <meta-data android:name="com.auth0.lock.client-id" android:value="iKdVaM8y9IKawbZiVFkEzUs2Lft39Svn"/>
-        <meta-data android:name="com.auth0.lock.domain-url" android:value="maxwell.auth0.com"/>
-        <!--Auth0 Lock End-->
 
         <!-- FACEBOOK BEGIN -->
         <activity
